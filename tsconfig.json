@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    //"removeComments": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "mapRoot": "sourcemaps",
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+  },
+  "files": [
+    "src/json_adapter.ts",
+    "src/yaml_adapter.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
