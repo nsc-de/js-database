@@ -1,7 +1,7 @@
 {
   "name": "nscdb",
   "version": "0.1.0",
-  "description": "A package to manage json and other data storage formats",
+  "description": "A lightweight package to manage json and other data storage formats",
   "main": "dist/database.js",
   "scripts": {
     "compile": "tsc",
@@ -17,7 +17,7 @@
     "node"
   ],
   "author": "Nicolas Schmidt <https://github.com/nsc-de>",
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "optionalDependencies": {
     "js-yaml": "^3.14.0"
   },
