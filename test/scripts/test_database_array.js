@@ -140,4 +140,13 @@ describe('DatabaseArray', () => {
       assert.strictEqual(object.contains("1.0"), false);
     });
   });
+
+  describe('#push()', () => {
+    it('test push', () => {
+      const object = new db.DatabaseArray(["test"]);
+      assert.strictEqual(object.push("0").get(1), "0");
+      assert.strictEqual(object.push(1).get(2), 1);
+      assert.instanceOf(object.push({}).get(3), db.DatabaseObject);
+    });
+  });
 });

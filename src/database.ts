@@ -377,9 +377,13 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
  *
  * @see DatabaseArray.data
  * @see DatabaseArray.constructor
- * @see DatabaseArray.set
- * @see DatabaseArray.get
- * @see DatabaseArray.update
+ * @see DatabaseArray.set - sets a value from the DatabaseArray
+ * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
+ * @see DatabaseArray.get - gets a value from the DatabaseArray
+ * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
+ * @see DatabaseArray.update - updates a value from the DatabaseArray
+ * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+ * @see DatabaseArray.push - push a value into the DatabaseArray
  */
 export class DatabaseArray {
 
@@ -455,10 +459,12 @@ export class DatabaseArray {
    * @returns the DatabaseArray itself, so you can chain operations like that
    *
    * @see DatabaseArray - 👩‍👦 the parent class
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.get - gets a value from the DatabaseArray
    * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   * @see DatabaseArray.push - push a value into the DatabaseArray
    *
    */
   public set(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
@@ -480,6 +486,30 @@ export class DatabaseArray {
     return this;
   }
 
+
+  /**
+   * Sets a default value from the DatabaseArray.
+   *
+   * @author Nicolas Schmidt
+   * @param key the path to apply the value to
+   * @param value the value to apply to the given path
+   * @returns the DatabaseArray itself, so you can chain operations like that
+   *
+   * @see DatabaseArray - 👩‍👦 the parent class
+   * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
+   * @see DatabaseArray.get - gets a value from the DatabaseArray
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
+   * @see DatabaseArray.update - updates a value from the DatabaseArray
+   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   * @see DatabaseArray.push - push a value into the DatabaseArray
+   *
+   */
+  public setDefault(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
+    if(!this.contains(key)) this.set(key, value);
+    return this;
+  }
+
   
   /**
    * Gets a value from the DatabaseArray.
@@ -490,9 +520,11 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   * @see DatabaseArray.push - push a value into the DatabaseArray
    *
    */
   public get(key: number | string | Array<string | number>): DatabaseValue {
@@ -520,9 +552,11 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.get - gets a value from the DatabaseArray
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   * @see DatabaseArray.push - push a value into the DatabaseArray
    *
    */
   public getNormal(key: number | string | Array<string | number>): DatabaseValueAble {
@@ -540,9 +574,11 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.get - gets a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   * @see DatabaseArray.push - push a value into the DatabaseArray
    *
    */
   public update(key: number | string | Array<string | number>, update: (e : DatabaseValue) =>  DatabaseInsertable ): this {
@@ -559,10 +595,12 @@ export class DatabaseArray {
    * @returns the value at the position of the position
    *
    * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseObject
+   * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.get - gets a value from the DatabaseObject
    * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseObject
+   * @see DatabaseArray.push - push a value into the DatabaseArray
    *
    */
   public contains(key: number | string | Array<string | number>): boolean {
@@ -582,24 +620,26 @@ export class DatabaseArray {
 
 
   /**
-   * Sets a default value from the DatabaseArray.
+   * Pushs a value into the DatabaseArray
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
-   * @param value the value to apply to the given path
+   * @param value the value to push into the array
    * @returns the DatabaseArray itself, so you can chain operations like that
    *
    * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseObject
+   * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
    * @see DatabaseArray.get - gets a value from the DatabaseArray
    * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public setDefault(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
-    if(!this.contains(key)) this.set(key, value);
+  public push(value: DatabaseInsertable): this {
+
+    this._data.push(createDatabaseValue(value));
     return this;
+    
   }
 }
 
