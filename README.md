@@ -10,7 +10,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/nsc-de/js-database">
-    <img src="https://github.com/nsc-de/js-database/blob/master/images/logo-line.png" alt="Logo" width="100%">
+    <img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
   <h3 align="center">JS Database (aka NSCDB)</h3>
@@ -270,7 +270,7 @@ Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/
 
 ---
 <p align="right">
-<a href="https://github.com/nsc-de/js-database"><img src="https://github.com/nsc-de/js-database/blob/master/images/logo.png" alt="Logo" width="10" height="10" /> js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a>
+<a href="https://github.com/nsc-de/js-database"><img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo.png" alt="Logo" width="10" height="10" /> js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a>
 </p>
 
 
@@ -290,4 +290,4 @@ Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/
 [stars-url]: https://github.com/nsc-de/js-database/stargazers
 [issues-url]: https://github.com/nsc-de/js-database/issues
 [license-url]: https://github.com/nsc-de/js-database/blob/master/LICENSE
-[npm-url]: https://www.npmjs.com/package/nsc-de/js-database
+[npm-url]: https://www.npmjs.com/package/nscdb
