@@ -1,0 +1,28 @@
+{
+  "name": "nscdb-example",
+  "version": "0.1.0",
+  "description": "examples for nscdb",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsc-de/js-database.git"
+  },
+  "keywords": [
+    "example",
+    "nscdb",
+    "database"
+  ],
+  "author": "Nicolas Schmidt",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/nsc-de/js-database/issues"
+  },
+  "homepage": "https://github.com/nsc-de/js-database#readme",
+  "dependencies": {
+    "js-yaml": "^3.14.0",
+    "nscdb": "file:.."
+  }
+}
