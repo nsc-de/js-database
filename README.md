@@ -282,8 +282,8 @@ Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/
 [stars-shield]: https://img.shields.io/github/stars/nsc-de/js-database.svg
 [issues-shield]: https://img.shields.io/github/issues/nsc-de/js-database.svg
 [license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
-[version-shield]: https://img.shields.io/npm/v/nsc-de/js-database.svg
-[downloads-shield]: https://img.shields.io/npm/dt/nsc-de/js-database.svg
+[version-shield]: https://img.shields.io/npm/v/nscdb.svg
+[downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
 
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
 [forks-url]: https://github.com/nsc-de/js-database/network/members
