@@ -635,9 +635,9 @@ export class DatabaseArray {
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public push(value: DatabaseInsertable): this {
+  public push(...values: DatabaseInsertable[]): this {
 
-    this._data.push(createDatabaseValue(value));
+    this._data.push(...values.map(v => createDatabaseValue(v)));
     return this;
     
   }
