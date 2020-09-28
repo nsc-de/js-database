@@ -45,7 +45,7 @@
 * [Usage](#usage)
   * [Basic Usage](#basic-usage)
   * [Use Yaml](#use-yaml)
-  * [Synchronous Usage](synchronous-usage)
+  * [Synchronous Usage](#synchronous-usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
