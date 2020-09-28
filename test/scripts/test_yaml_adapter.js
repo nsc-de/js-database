@@ -5,7 +5,7 @@ const fs = require('fs-extra');
 const { describe } = require('mocha');
 const path = require('path');
 const yaml = require('js-yaml');
-const { YamlFileAdapter, SyncYamlFileAdapter } = require('../../dist/yaml_adapter');
+const { YamlFileAdapter, SyncYamlFileAdapter } = require('nscdb/yaml_adapter');
 
 let non_existing = path.join(__dirname, '../assets/not-existing.yml');
 let test_file = path.join(__dirname, '../assets/adapter_test.yml');

@@ -1,3 +1,12 @@
-dist
+# dependencies
 node_modules
 package-lock.json
+
+# build files
+*.d.ts
+*.js
+*.map
+
+# include tests and examples
+!test/**/*.js
+!example/**/*.js

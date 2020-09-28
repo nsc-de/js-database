@@ -2,7 +2,7 @@
 
 const { assert } = require('chai');
 const { describe } = require('mocha');
-const db = require('../../dist/database');
+const db = require('nscdb');
 
 
 describe('DatabaseObject', () => {
@@ -92,6 +92,27 @@ describe('DatabaseObject', () => {
     it('test deep get', () => {
       const object = new db.DatabaseObject({test: {test: "test"}});
       assert.equal(object.get("test.test"), "test");
+    });
+    it('test get for object', () => {
+      const object = new db.DatabaseObject({test: {test: "test"}, test2: ["aaa"]});
+      assert.instanceOf(object.get("test"), db.DatabaseObject);
+      assert.instanceOf(object.get("test2"), db.DatabaseArray);
+    });
+  });
+
+  describe('#getNormal()', () => {
+    it('test basic getNormal', () => {
+      const object = new db.DatabaseObject({test: "test"});
+      assert.equal(object.getNormal("test"), "test");
+    });
+    it('test deep getNormal', () => {
+      const object = new db.DatabaseObject({test: {test: "test"}});
+      assert.equal(object.getNormal("test.test"), "test");
+    });
+    it('test getNormal for object', () => {
+      const object = new db.DatabaseObject({test: {test: "test"}, test2: ["aaa"]});
+      assert.deepEqual(object.getNormal("test"), {test: "test"});
+      assert.deepEqual(object.getNormal("test2"), ["aaa"]);
     });
   });
 

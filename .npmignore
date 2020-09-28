@@ -1,4 +1,12 @@
-/src
-/test
-/node_modules
-/package-lock.json
+# files for development that should not be in production
+.vscode
+src
+test
+
+# github assets
+example
+images
+
+# dependenies
+node_modules
+package-lock.json

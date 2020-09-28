@@ -179,6 +179,36 @@ export function createDatabaseValue(val : number) : number;
 export function createDatabaseValue(val : boolean) : boolean;
 
 /**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * null as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val ❓ null
+ * @returns ⛔ null
+ *
+ * @see createDatabaseValue
+ *
+ */
+export function createDatabaseValue(val : null) : null;
+
+/**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * undefined as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val ❓ undefined
+ * @returns ⛔ undefined
+ *
+ * @see createDatabaseValue
+ *
+ */
+export function createDatabaseValue(val : undefined) : undefined;
+
+/**
  * Creates a DatabaseValue from a given value
  *
  * @author Nicolas Schmidt
@@ -186,7 +216,7 @@ export function createDatabaseValue(val : boolean) : boolean;
  * @returns the database-value
  *
  */
-export function createDatabaseValue(val : any) : DatabaseObject | DatabaseArray | boolean | number | string;
+export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue;
 
 /**
  * Implementation for the createDatabaseValue function
@@ -196,7 +226,7 @@ export function createDatabaseValue(val : any) : DatabaseObject | DatabaseArray 
  * @returns the database-value
  *
  */
-export function createDatabaseValue(val : any) : DatabaseObject | DatabaseArray | boolean | number | string {
+export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
   if (val instanceof DatabaseObject || val instanceof DatabaseArray) return val;
   if (val instanceof Array) return new DatabaseArray(val);
   if (val instanceof Object) return new DatabaseObject(val);
@@ -279,6 +309,36 @@ export function getNormalValue(val : number): number;
 export function getNormalValue(val : boolean ): boolean;
 
 /**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * null as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val ❓ null
+ * @returns ⛔ null
+ *
+ * @see getNormalValue
+ *
+ */
+export function getNormalValue(val : null ): null;
+
+/**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * undefined as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val ❓ undefined
+ * @returns ⛔ undefined
+ *
+ * @see getNormalValue
+ *
+ */
+export function getNormalValue(val : undefined ): undefined;
+
+/**
  * creates the 'normal' value from database-objects
  *
  * @author Nicolas Schmidt
@@ -288,7 +348,7 @@ export function getNormalValue(val : boolean ): boolean;
  * @see getNormalValue
  *
  */
-export function getNormalValue(val : DatabaseObject | DatabaseArray | boolean | number | string): any;
+export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble;
 
 /**
  * [implementation]
@@ -301,7 +361,7 @@ export function getNormalValue(val : DatabaseObject | DatabaseArray | boolean | 
  * @see getNormalValue
  *
  */
-export function getNormalValue(val : DatabaseObject | DatabaseArray | boolean | number | string): any {
+export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
   if(val instanceof DatabaseObject || val instanceof  DatabaseArray) return val.data;
   else return val;
 }
@@ -345,12 +405,12 @@ export class DatabaseArray {
    * @see DatabaseArray._data - the storage for the data
    *
    */
-  public set data(data : Array<any>) {
+  public set data(data : DatabaseInsertable[]) {
     this._data = [];
     data.forEach((v, k) => this._data[k] = createDatabaseValue(v));
   }
 
-  public get data(): Array<any> {
+  public get data(): DatabaseInsertable[] {
     let data: any[] = [];
     for(let i = 0; i < this._data.length; i++) data[i] = getNormalValue(this._data[i]);
     return data;
@@ -396,11 +456,12 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.get - gets a value from the DatabaseArray
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public set(key: number | string | Array<string | number>, value : Object | Array<any> | number | string | boolean): this {
+  public set(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
 
     if(typeof key == "string") this.set(key.split(/[.\[\]]/g), value);
     else if(typeof key == "number") this._data[key] = createDatabaseValue(value);
@@ -429,23 +490,43 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public get(key: number | string | Array<string | number>): DatabaseObject | DatabaseArray | number | string | boolean | null {
+  public get(key: number | string | Array<string | number>): DatabaseValue {
 
     if(typeof key == "string") return this.get(key.split(/[.\[\]]/g));
     else if(typeof key == "number") return this._data[key];
     else {
       if(key.length > 1) {
         let e = <DatabaseObject | DatabaseArray><unknown> this._data[<number>key[0]];
-        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return null;
+        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
         return e?.get(key.slice(1, key.length));
       } else {
         return this._data[typeof key[0] == "string" ? parseInt(key[0]) : key[0]];
       }
     }
+  }
+
+  
+  /**
+   * Gets a value from the DatabaseArray normalizes it
+   *
+   * @author Nicolas Schmidt
+   * @param key the path to apply the value to
+   * @returns the value of the key
+   *
+   * @see DatabaseArray - 👩‍👦 the parent class
+   * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.get - gets a value from the DatabaseArray
+   * @see DatabaseArray.update - updates a value from the DatabaseArray
+   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
+   *
+   */
+  public getNormal(key: number | string | Array<string | number>): DatabaseValueAble {
+    return getNormalValue(this.get(key));
   }
 
 
@@ -459,11 +540,12 @@ export class DatabaseArray {
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.get - gets a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public update(key: number | string | Array<string | number>, update: (e :  DatabaseObject | DatabaseArray | number | string | boolean | null ) =>  DatabaseObject | DatabaseArray | number | string | boolean ): this {
+  public update(key: number | string | Array<string | number>, update: (e : DatabaseValue) =>  DatabaseInsertable ): this {
     this.set(key, update(this.get(key)));
     return this;
   }
@@ -479,6 +561,7 @@ export class DatabaseArray {
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseObject
    * @see DatabaseArray.get - gets a value from the DatabaseObject
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseObject
    *
    */
@@ -509,11 +592,12 @@ export class DatabaseArray {
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseObject
    * @see DatabaseArray.get - gets a value from the DatabaseArray
+   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
    * @see DatabaseArray.update - updates a value from the DatabaseArray
    * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
    *
    */
-  public setDefault(key: number | string | Array<string | number>, value : Object | Array<any> | number | string | boolean): this {
+  public setDefault(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
     if(!this.contains(key)) this.set(key, value);
     return this;
   }
@@ -595,7 +679,7 @@ export class DatabaseObject {
    *
    */
   constructor(
-    data: Object = {},
+    data: JSObject = {},
   ) { this.data = data; }
 
 
@@ -632,11 +716,12 @@ export class DatabaseObject {
    *
    * @see DatabaseObject - 👩‍👦 the parent class
    * @see DatabaseObject.get - gets a value from the DatabaseObject
+   * @see DatabaseObject.getNormal - gets a normalized value from the DatabaseObject
    * @see DatabaseObject.update - updates a value from the DatabaseObject
    * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
    *
    */
-  public set(key: string | Array<string | number>, value : Object | Array<any> | number | string | boolean): this {
+  public set(key: string | Array<string | number>, value : DatabaseInsertable): this {
     if(typeof key == "string") return this.set(key.split(/[.\[\]]/g), value);
     else {
       if(key.length > 1) {
@@ -658,26 +743,46 @@ export class DatabaseObject {
    *
    * @author Nicolas Schmidt
    * @param key the path to apply the value to
-   * @returns the value at the position of the position
+   * @returns the value at the position
    *
    * @see DatabaseObject - 👩‍👦 the parent class
    * @see DatabaseObject.set - sets a value from the DatabaseObject
+   * @see DatabaseObject.getNormal - gets a normalized value from the DatabaseObject
    * @see DatabaseObject.update - updates a value from the DatabaseObject
    * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
    *
    */
-  public get(key: string | Array<string | number>): DatabaseObject | DatabaseArray | number | string | boolean | null {
+  public get(key: string | Array<string | number>): DatabaseValue {
 
     if(typeof key == "string") return this.get(key.split(/[.\[\]]/g));
     else {
       if(key.length > 1) {
         let e = <DatabaseObject | DatabaseArray><unknown> this._data[key[0]];
-        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return null;
+        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
         return e?.get(key.slice(1, key.length));
       } else {
         return this._data[<string>key[0]];
       }
     }
+  }
+
+
+  /**
+   * Gets a value from the DatabaseObject and normalizes it
+   *
+   * @author Nicolas Schmidt
+   * @param key the path to apply the value to
+   * @returns the normalized value at the position
+   *
+   * @see DatabaseObject - 👩‍👦 the parent class
+   * @see DatabaseObject.set - sets a value from the DatabaseObject
+   * @see DatabaseObject.get - gets a value from the DatabaseObject
+   * @see DatabaseObject.update - updates a value from the DatabaseObject
+   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
+   *
+   */
+  public getNormal(key: string | Array<string | number>): DatabaseValueAble {
+    return getNormalValue(this.get(key));
   }
 
 
@@ -695,7 +800,7 @@ export class DatabaseObject {
    * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
    *
    */
-  public update(key: string | Array<string | number>, update: (e :  DatabaseObject | DatabaseArray | number | string | boolean | null ) =>  DatabaseObject | DatabaseArray | number | string | boolean ): this {
+  public update(key: string | Array<string | number>, update: (e :  DatabaseValue ) =>  DatabaseInsertable): this {
     this.set(key, update(this.get(key)));
     return this;
   }
@@ -749,7 +854,7 @@ export class DatabaseObject {
    * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
    *
    */
-  public setDefault(key: string | Array<string | number>, value : Object | Array<any> | number | string | boolean): this {
+  public setDefault(key: string | Array<string | number>, value : DatabaseInsertable): this {
     if(!this.contains(key)) this.set(key, value);
     return this;
   }
@@ -927,5 +1032,7 @@ function isNumberString(s: string): boolean {
   return true;
 }
 
-
+export type DatabaseValue = DatabaseObject | DatabaseArray | number | string | boolean | null | undefined;
+export type DatabaseValueAble = any[] | JSObject | number | string | boolean | null | undefined;
+export type DatabaseInsertable = DatabaseValue | DatabaseValueAble;
 export interface JSObject {[key: string] : any};

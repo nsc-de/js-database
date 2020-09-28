@@ -2,7 +2,7 @@
   "name": "nscdb",
   "version": "0.1.0",
   "description": "A lightweight package to manage json and other data storage formats",
-  "main": "dist/database.js",
+  "main": "database.js",
   "scripts": {
     "compile": "tsc",
     "test": "tsc&mocha test/scripts/**/*.js"

@@ -4,7 +4,7 @@ const { assert } = require('chai');
 const fs = require('fs-extra');
 const { describe } = require('mocha');
 const path = require('path');
-const { JsonFileAdapter, SyncJsonFileAdapter } = require('../../dist/json_adapter');
+const { JsonFileAdapter, SyncJsonFileAdapter } = require('nscdb/json_adapter');
 
 let non_existing = path.join(__dirname, '../assets/not-existing.json');
 let test_file = path.join(__dirname, '../assets/adapter_test.json');

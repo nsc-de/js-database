@@ -2,7 +2,7 @@
 
 const { assert } = require('chai');
 const { describe } = require('mocha');
-const db = require('../../dist/database');
+const db = require('nscdb');
 
 const dummyAdapter = { load: () => { return {}; }, save: () => {} };
 
