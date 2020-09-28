@@ -10,13 +10,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/nsc-de/js-database">
-    <img src="images/logo-line.png" alt="Logo" width="100%">
+    <img src="https://github.com/nsc-de/js-database/blob/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
   <h3 align="center">JS Database (aka NSCDB)</h3>
 
   <p align="center">
-    <i>A simple lightweight package to manage data</i>
+    A simple lightweight package to manage data
     <br />
     <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Explore the docs »</strong></a>
     <br />
@@ -52,8 +52,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-
 
 ### Built With
 
@@ -139,17 +137,20 @@ Distributed under the BSD2-Clause License. See `LICENSE` for more information.
 
 Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/js-database)
 
-
+---
+<p align="right">
+<a href="https://github.com/nsc-de/js-database"><img src="https://github.com/nsc-de/js-database/blob/master/images/logo.png" alt="Logo" width="10" height="10" /> js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a>
+</p>
 
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/nsc-de/js-database.svg?style=flat-square
-[forks-shield]: https://img.shields.io/github/forks/nsc-de/js-database.svg?style=flat-square
-[stars-shield]: https://img.shields.io/github/stars/nsc-de/js-database.svg?style=flat-square
-[issues-shield]: https://img.shields.io/github/issues/nsc-de/js-database.svg?style=flat-square
-[license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/nsc-de/js-database.svg
+[forks-shield]: https://img.shields.io/github/forks/nsc-de/js-database.svg
+[stars-shield]: https://img.shields.io/github/stars/nsc-de/js-database.svg
+[issues-shield]: https://img.shields.io/github/issues/nsc-de/js-database.svg
+[license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
 [version-shield]: https://img.shields.io/npm/v/nsc-de/js-database.svg
 [downloads-shield]: https://img.shields.io/npm/dt/nsc-de/js-database.svg
 
