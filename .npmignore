@@ -1,5 +1,6 @@
 # files for development that should not be in production
 .vscode
+.github
 src
 test
 
