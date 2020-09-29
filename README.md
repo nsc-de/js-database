@@ -135,6 +135,7 @@ users.push({
   password: 'a password'
 });
   
+
 users.push({
   id: database.generateId("users"),
   name: 'Lisa Bradley',
@@ -209,7 +210,7 @@ users.push({
   name: 'Harleen Dolan',
   password: 'a password'
 });
-  
+
 users.push({
   id: database.generateId("users"),
   name: 'Lisa Bradley',
@@ -270,7 +271,7 @@ Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/
 
 ---
 <p align="right">
-<a href="https://github.com/nsc-de/js-database"><img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo.png" alt="Logo" width="10" height="10" /> js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a>
+<a href="https://github.com/nsc-de/js-database">js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a> | <a href="https://github.com/nsc-de/js-database">GitHub</a> | <a href="https://www.npmjs.com/package/nscdb">NPM</a>
 </p>
 
 
