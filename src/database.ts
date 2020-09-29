@@ -515,7 +515,7 @@ export class DatabaseArray {
    * Gets a value from the DatabaseArray.
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to get
    * @returns the value of the key
    *
    * @see DatabaseArray - 👩‍👦 the parent class
@@ -547,7 +547,7 @@ export class DatabaseArray {
    * Gets a value from the DatabaseArray normalizes it
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to get
    * @returns the value of the key
    *
    * @see DatabaseArray - 👩‍👦 the parent class
@@ -568,7 +568,7 @@ export class DatabaseArray {
    * Upates a value from the DatabaseArray.
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to update
    * @param update the funciton to update the value
    * @returns the DatabaseArray itself, so you can chain operations like that
    *
@@ -591,8 +591,8 @@ export class DatabaseArray {
    * Checks if the DatabaseArray contains a value
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
-   * @returns the value at the position of the position
+   * @param key the path to check
+   * @returns does the array contains the value
    *
    * @see DatabaseArray - 👩‍👦 the parent class
    * @see DatabaseArray.set - sets a value from the DatabaseArray
@@ -724,29 +724,6 @@ export class DatabaseObject {
 
 
   /**
-   * Sets default values for the DatabaseObject.
-   *
-   * @author Nicolas Schmidt
-   * @param defaults an object containing all the default values
-   * @returns the DatabaseObject itself, so you can chain operations like that
-   *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
-   */
-  public setDefaults (defaults : JSObject): this {
-    Object.keys(defaults).forEach(k => {
-      if(!this._data[k]) this._data[k] = createDatabaseValue(defaults[k]);
-      else if(defaults[k] instanceof Object && this._data[k] instanceof DatabaseObject) this._data[k].setDefaults(defaults[k]);
-    });
-    return this;
-  }
-
-
-  /**
    * Sets a value from the DatabaseObject.
    *
    * @author Nicolas Schmidt
@@ -777,12 +754,55 @@ export class DatabaseObject {
     return this;
   }
 
+  /**
+   * Sets a default value from the DatabaseObject.
+   *
+   * @author Nicolas Schmidt
+   * @param key the path to apply the value to
+   * @param value the value to apply to the given path
+   * @returns the DatabaseObject itself, so you can chain operations like that
+   *
+   * @see DatabaseObject - 👩‍👦 the parent class
+   * @see DatabaseObject.set - sets a value from the DatabaseObject
+   * @see DatabaseObject.get - gets a value from the DatabaseObject
+   * @see DatabaseObject.update - updates a value from the DatabaseObject
+   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
+   *
+   */
+  public setDefault(key: string | Array<string | number>, value : DatabaseInsertable): this {
+    if(!this.contains(key)) this.set(key, value);
+    return this;
+  }
+
+
+  /**
+   * Sets default values for the DatabaseObject.
+   *
+   * @author Nicolas Schmidt
+   * @param defaults an object containing all the default values
+   * @returns the DatabaseObject itself, so you can chain operations like that
+   *
+   * @see DatabaseObject - 👩‍👦 the parent class
+   * @see DatabaseObject.set - sets a value from the DatabaseObject
+   * @see DatabaseObject.get - gets a value from the DatabaseObject
+   * @see DatabaseObject.update - updates a value from the DatabaseObject
+   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
+   *
+   */
+  public setDefaults (defaults : JSObject): this {
+    Object.keys(defaults).forEach(k => {
+      if(!this._data[k]) this._data[k] = createDatabaseValue(defaults[k]);
+      else if(defaults[k] instanceof Object && this._data[k] instanceof DatabaseObject) this._data[k].setDefaults(defaults[k]);
+    });
+    return this;
+  }
+
 
   /**
    * Gets a value from the DatabaseObject.
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to get
    * @returns the value at the position
    *
    * @see DatabaseObject - 👩‍👦 the parent class
@@ -811,7 +831,7 @@ export class DatabaseObject {
    * Gets a value from the DatabaseObject and normalizes it
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to get
    * @returns the normalized value at the position
    *
    * @see DatabaseObject - 👩‍👦 the parent class
@@ -830,7 +850,7 @@ export class DatabaseObject {
    * Updates a value from the DatabaseObject.
    *
    * @author Nicolas Schmidt
-   * @param key the path to apply the value to
+   * @param key the path to update
    * @param update the function to update the value
    * @returns the DatabaseObject itself, so you can chain operations like that
    *
@@ -877,26 +897,6 @@ export class DatabaseObject {
         return this._data[<string>key[0]] != null;
       }
     }
-  }
-
-  /**
-   * Sets a default value from the DatabaseObject.
-   *
-   * @author Nicolas Schmidt
-   * @param key the path to apply the value to
-   * @param value the value to apply to the given path
-   * @returns the DatabaseObject itself, so you can chain operations like that
-   *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
-   */
-  public setDefault(key: string | Array<string | number>, value : DatabaseInsertable): this {
-    if(!this.contains(key)) this.set(key, value);
-    return this;
   }
 
 }
