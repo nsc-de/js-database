@@ -134,7 +134,6 @@ users.push({
   name: 'Harleen Dolan',
   password: 'a password'
 });
-  
 
 users.push({
   id: database.generateId("users"),
