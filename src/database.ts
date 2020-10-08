@@ -25,7 +25,7 @@ export interface SyncDatabaseAdapter {
    * 💾 loads data
    *
    * @author Nicolas Schmidt
-   * @return 💾 the data
+   * @return 💾 loads the data
    *
    * @see DatabaseAdapter - 👩‍👦 the parent interface
    * @see DatabaseAdapter.save - 💾 the save function
@@ -59,7 +59,7 @@ export interface DatabaseAdapter {
   save(data: JSObject): Promise<void>;
 
   /**
-   * 💾 loads data
+   * 💾 loads the data
    *
    * @author Nicolas Schmidt
    * @return ⌛ Promise (Ready when data is loaded) >> 💾 the data
@@ -242,7 +242,7 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
  *
  * @author Nicolas Schmidt
  * @param val 📋 the DatabaseArray you want to convert back to a normal value
- * @returns 🔨 the simple object
+ * @returns 🔨 the simple array
  *
  * @see DatabaseObject
  * @see getNormalValue
@@ -262,6 +262,38 @@ export function getNormalValue(val : DatabaseArray): any[];
  *
  */
 export function getNormalValue(val : DatabaseObject): JSObject;
+
+/**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * a array as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val 🏡 the array you want to convert back to a normal value
+ * @returns ⛔ the same array that was given as input
+ *
+ * @see DatabaseObject
+ * @see getNormalValue
+ *
+ */
+export function getNormalValue(val : any[]): any[];
+
+/**
+ * This function is not realy usefull. It gives just the input back.
+ * It is just implemented that you don't get an error when you give
+ * a object as argument.
+ *
+ * @author Nicolas Schmidt
+ * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
+ * @param val 🏡 the object you want to convert back to a normal value
+ * @returns ⛔ the same object that was given as input
+ *
+ * @see DatabaseObject
+ * @see getNormalValue
+ *
+ */
+export function getNormalValue(val : JSObject): JSObject;
 
 /**
  * This function is not realy usefull. It gives just the input back.

@@ -1,12 +1,14 @@
 # files for development that should not be in production
 .vscode
-.github
 src
 test
+*.map
 
-# github assets
+# github
 example
 images
+.gitignore
+.github
 
 # dependenies
 node_modules

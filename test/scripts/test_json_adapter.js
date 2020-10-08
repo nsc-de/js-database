@@ -2,7 +2,6 @@
 
 const { assert } = require('chai');
 const fs = require('fs-extra');
-const { describe } = require('mocha');
 const path = require('path');
 const { JsonFileAdapter, SyncJsonFileAdapter } = require('nscdb/json_adapter');
 

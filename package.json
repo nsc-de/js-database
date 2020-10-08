@@ -5,7 +5,12 @@
   "main": "database.js",
   "scripts": {
     "compile": "tsc",
-    "test": "tsc&mocha test/scripts/**/*.js"
+    "types": "tsc --project tsconfig.types.json",
+    "production": "npm run types&npm run production:only",
+    "production:only": "tsc --project tsconfig.production.json",
+    "test": "npm run test:compile&mocha test/scripts/**/*.js",
+    "test:compile": "npm run types&npm run test:compile:only",
+    "test:compile:only": "tsc --project tsconfig.testing.json"
   },
   "repository": {
     "type": "git",
@@ -28,6 +33,8 @@
     "fs-extra": "^9.0.1",
     "mocha": "^8.1.3",
     "source-map-support": "^0.5.19",
+    "typedoc": "^0.19.2",
     "typescript": "^4.0.3"
-  }
+  },
+  "types": "./types/database.d.ts"
 }

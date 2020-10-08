@@ -2,7 +2,6 @@
 
 const { assert } = require('chai');
 const fs = require('fs-extra');
-const { describe } = require('mocha');
 const path = require('path');
 const yaml = require('js-yaml');
 const { YamlFileAdapter, SyncYamlFileAdapter } = require('nscdb/yaml_adapter');

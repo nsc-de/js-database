@@ -1,7 +1,6 @@
 // jshint esversion: 6
 
 const { assert } = require('chai');
-const { describe } = require('mocha');
 const db = require('nscdb');
 
 

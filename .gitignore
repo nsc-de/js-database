@@ -3,6 +3,7 @@ node_modules
 package-lock.json
 
 # build files
+types
 *.d.ts
 *.js
 *.map
