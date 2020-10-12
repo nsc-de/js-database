@@ -1092,7 +1092,6 @@ export function createDatabase(adapter: DatabaseAdapter | SyncDatabaseAdapter): 
 
 function createObjectForKey(key: string | Array<string | number>): DatabaseObject | DatabaseArray {
   if(typeof key == "string") return createObjectForKey(key.split(/[.\[\]]/g));
-  console.log(key[1])
   if(typeof key[1] == 'number' || (typeof key[1] == 'string' && isNumberString(key[1]))) return new DatabaseArray([]);
   return new DatabaseObject();
 }
