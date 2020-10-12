@@ -3,12 +3,18 @@
 src
 test
 *.map
+tsconfig.production.json
+tsconfig.testing.json
+tsconfig.types.json
+tsdoc.json
 
 # github
+docs
 example
 images
 .gitignore
 .github
+_config.yml
 
 # dependenies
 node_modules
