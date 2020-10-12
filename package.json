@@ -6,8 +6,9 @@
   "scripts": {
     "compile": "tsc",
     "types": "tsc --project tsconfig.types.json",
-    "production": "npm run types&npm run production:only",
-    "production:only": "tsc --project tsconfig.production.json",
+    "build": "npm run types&npm run build:production",
+    "build:production": "tsc --project tsconfig.production.json",
+    "build:doc": "node_modules/.bin/typedoc --options tsdoc.json",
     "test": "npm run test:compile&mocha test/scripts/**/*.js",
     "test:compile": "npm run types&npm run test:compile:only",
     "test:compile:only": "tsc --project tsconfig.testing.json"
@@ -36,5 +37,5 @@
     "typedoc": "^0.19.2",
     "typescript": "^4.0.3"
   },
-  "types": "./types/database.d.ts"
+  "types": "./database.d.ts"
 }

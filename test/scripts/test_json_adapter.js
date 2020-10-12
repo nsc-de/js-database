@@ -18,7 +18,7 @@ describe('JsonFileAdapter', () => {
 
   describe('#save()', () => {
 
-    // empty >> {}
+    // Save the data normally
     it('should save the data', async () => {
 
       await deleteNonExisting();
@@ -27,7 +27,37 @@ describe('JsonFileAdapter', () => {
       await adapter.save(test_data);
 
       assert.isTrue(await fs.exists(non_existing));
-      assert.deepEqual(JSON.parse(await fs.readFile(non_existing)), test_data);
+      assert.equal("{\"testData\":\"test\"}", await fs.readFile(non_existing));
+
+      await deleteNonExisting();
+      
+    });
+
+    // Save the data beautified
+    it('should save the data beautified', async () => {
+
+      await deleteNonExisting();
+
+      const adapter = new JsonFileAdapter(non_existing, { beautify: true });
+      await adapter.save(test_data);
+
+      assert.isTrue(await fs.exists(non_existing));
+      assert.equal("{\n  \"testData\": \"test\"\n}", await fs.readFile(non_existing));
+
+      await deleteNonExisting();
+      
+    });
+
+    // Save the data beautified
+    it('should save the data beautified with 4 spaces', async () => {
+
+      await deleteNonExisting();
+
+      const adapter = new JsonFileAdapter(non_existing, { beautify: true, beautify_space: 4 });
+      await adapter.save(test_data);
+
+      assert.isTrue(await fs.exists(non_existing));
+      assert.equal("{\n    \"testData\": \"test\"\n}", await fs.readFile(non_existing));
 
       await deleteNonExisting();
       
