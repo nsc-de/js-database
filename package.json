@@ -19,8 +19,13 @@
   },
   "keywords": [
     "database",
-    "javascript",
-    "node"
+    "json",
+    "yaml",
+    "file",
+    "local",
+    "localStorage",
+    "storage",
+    "electron"
   ],
   "author": "Nicolas Schmidt <https://github.com/nsc-de>",
   "license": "BSD-2-Clause",
