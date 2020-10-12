@@ -6,6 +6,8 @@
   "excludeExternals": true,
   "excludeNotExported": true,
   "excludePrivate": true,
+  "exclude": "src/fs_help.ts",
   "stripInternal": true,
-  "tsconfig": "./tsconfig.types.json"
+  "tsconfig": "./tsconfig.types.json",
+  "favicon": "images/logo.png"
 }

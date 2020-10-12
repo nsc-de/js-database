@@ -1,0 +1,363 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>nscdb</title>
+	<meta name="description" content="Documentation for nscdb">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="icon" href="logo.png" />
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">nscdb</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>nscdb</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><a href="https://github.com/nsc-de/js-database/graphs/contributors"><img src="https://img.shields.io/github/contributors/nsc-de/js-database.svg" alt="Contributors"></a>
+					<a href="https://github.com/nsc-de/js-database/network/members"><img src="https://img.shields.io/github/forks/nsc-de/js-database.svg" alt="Forks"></a>
+					<a href="https://github.com/nsc-de/js-database/stargazers"><img src="https://img.shields.io/github/stars/nsc-de/js-database.svg" alt="Stargazers"></a>
+					<a href="https://github.com/nsc-de/js-database/issues"><img src="https://img.shields.io/github/issues/nsc-de/js-database.svg" alt="Issues"></a>
+					<a href="https://github.com/nsc-de/js-database/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nsc-de/js-database.svg" alt="MIT License"></a>
+					<a href="https://www.npmjs.com/package/nscdb"><img src="https://img.shields.io/npm/v/nscdb.svg" alt="NPM"></a>
+				<a href="https://www.npmjs.com/package/nscdb"><img src="https://img.shields.io/npm/dt/nscdb.svg" alt="Downloads"></a></p>
+				<br />
+				<p align="center">
+					<a href="https://github.com/nsc-de/js-database">
+						<img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
+					</a>
+					<h3 align="center">JS Database (aka NSCDB)</h3>
+					<p align="center">
+						A simple lightweight package to manage data
+						<br />
+						<a href="https://github.com/nsc-de/js-database/wiki/"><strong>Explore the docs »</strong></a>
+						<br />
+						<br />
+						<a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart">Quickstart</a>
+						·
+						<a href="https://github.com/nsc-de/js-database/issues/new?assignees=&labels=&template=bug_report.md&title=">Report Bug</a>
+						·
+						<a href="https://github.com/nsc-de/js-database/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
+					</p>
+				</p>
+				<!-- TABLE OF CONTENTS -->
+				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>Table of Contents</h2>
+				</a>
+				<ul>
+					<li><a href="#about-the-project">About the Project</a><ul>
+							<li><a href="#built-with">Built With</a></li>
+							<li><a href="#dependencies">Dependencies</a><ul>
+									<li><a href="#optional-dependencies">Optional Dependencys</a></li>
+									<li><a href="#development-dependencies">Development Dependencys</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#getting-started">Getting Started</a><ul>
+							<li><a href="#prerequisites">Prerequisites</a></li>
+							<li><a href="#installation">Installation</a></li>
+						</ul>
+					</li>
+					<li><a href="#usage">Usage</a><ul>
+							<li><a href="#basic-usage">Basic Usage</a></li>
+							<li><a href="#use-yaml">Use Yaml</a></li>
+							<li><a href="#synchronous-usage">Synchronous Usage</a></li>
+						</ul>
+					</li>
+					<li><a href="#roadmap">Roadmap</a></li>
+					<li><a href="#contributing">Contributing</a></li>
+					<li><a href="#license">License</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<!-- ABOUT THE PROJECT -->
+				<a href="#about-the-project" id="about-the-project" style="color: inherit; text-decoration: none;">
+					<h2>About The Project</h2>
+				</a>
+				<a href="#built-with" id="built-with" style="color: inherit; text-decoration: none;">
+					<h3>Built With</h3>
+				</a>
+				<ul>
+					<li><a href="https://nodejs.org/en/">Node</a></li>
+					<li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+				</ul>
+				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+					<h3>Dependencies</h3>
+				</a>
+				<a href="#optional-dependencies" id="optional-dependencies" style="color: inherit; text-decoration: none;">
+					<h4>Optional Dependencies</h4>
+				</a>
+				<ul>
+					<li><a href="https://www.npmjs.com/package/js-yaml">js-yaml</a>@^<a href="https://www.npmjs.com/package/js-yaml/v/3.14.0">3.14.0</a> - the package has an integrated adaptor for yaml using this package (install if you want to use yaml)</li>
+				</ul>
+				<a href="#development-dependencies" id="development-dependencies" style="color: inherit; text-decoration: none;">
+					<h4>Development Dependencies</h4>
+				</a>
+				<ul>
+					<li><a href="https://www.npmjs.com/package/@types/js-yaml">@types/js-yaml</a>@^<a href="https://www.npmjs.com/package/@types/js-yaml/v/3.12.5">3.12.5</a> - typings for js-yaml</li>
+					<li><a href="https://www.npmjs.com/package/@types/node">@types/node</a>@^<a href="https://www.npmjs.com/package/@types/node/v/14.10.1">14.10.1</a> - typings for node</li>
+					<li><a href="https://www.npmjs.com/package/chai">chai</a>@^<a href="https://www.npmjs.com/package/chai/v/4.2.0">4.2.0</a> - assertions for tests</li>
+					<li><a href="https://www.npmjs.com/package/mocha">mocha</a>@^<a href="https://www.npmjs.com/package/mocha/v/8.1.3">8.1.3</a> - all tests are written using mocha</li>
+					<li><a href="https://www.npmjs.com/package/source-map-support">source-map-support</a>@^<a href="https://www.npmjs.com/package/source-map-support/v/0.5.19">0.5.19</a> - show errors in typescipt</li>
+					<li><a href="https://www.npmjs.com/package/typescript">typescript</a>@^<a href="https://www.npmjs.com/package/typescript/v/4.0.3">4.0.3</a> - the typescript compiler</li>
+				</ul>
+				<!-- GETTING STARTED -->
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting Started</h2>
+				</a>
+				<p>To get the package up and running follow these simple steps.</p>
+				<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
+					<h3>Prerequisites</h3>
+				</a>
+				<p>You should have npm to install this package</p>
+				<ul>
+					<li>npm<pre><code class="language-sh">npm install npm@latest -g</code></pre>
+					</li>
+				</ul>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h3>Installation</h3>
+				</a>
+				<ol>
+					<li>Install the package<pre><code class="language-sh">npm i nscdb</code></pre>
+					</li>
+				</ol>
+				<!-- USAGE EXAMPLES -->
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
+					<h3>Basic Usage</h3>
+				</a>
+				<p>Import using Typescript</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { createDatabase } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb&#x27;</span>;
+<span class="hljs-keyword">import</span> { JsonFileAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>;</code></pre>
+				<p>Import using Javascript</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { createDatabase } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb&#x27;</span>);
+<span class="hljs-keyword">const</span> { JsonFileAdapter } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>);</code></pre>
+				<p>A small system using the api</p>
+				<pre><code class="language-js"><span class="hljs-keyword">let</span> database = <span class="hljs-keyword">await</span> createDatabase(<span class="hljs-keyword">new</span> JsonFileAdapter(<span class="hljs-string">&quot;./database.json&quot;</span>));
+
+<span class="hljs-comment">// Set defaults</span>
+database.setDefaults({
+  <span class="hljs-attr">users</span>: []
+});
+
+<span class="hljs-comment">// Push a value into the Database</span>
+<span class="hljs-keyword">let</span> users = database.get(<span class="hljs-string">&quot;users&quot;</span>);
+users.push({
+  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Harleen Dolan&#x27;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;a password&#x27;</span>
+});
+
+users.push({
+  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Lisa Bradley&#x27;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;another password&#x27;</span>
+});
+
+<span class="hljs-comment">// print output data from the database</span>
+<span class="hljs-built_in">console</span>.log(database.data);
+
+<span class="hljs-comment">// Console Output:</span>
+<span class="hljs-comment">// &gt;&gt; {</span>
+<span class="hljs-comment">// &gt;&gt;   users: [</span>
+<span class="hljs-comment">// &gt;&gt;     { id: 0, name: &#x27;Harleen Dolan&#x27;, password: &#x27;a password&#x27; },</span>
+<span class="hljs-comment">// &gt;&gt;     { id: 1, name: &#x27;Lisa Bradley&#x27;, password: &#x27;another password&#x27; }</span>
+<span class="hljs-comment">// &gt;&gt;   ],</span>
+<span class="hljs-comment">// &gt;&gt;   id_counters: { users: 1 }</span>
+<span class="hljs-comment">// &gt;&gt; }</span>
+
+<span class="hljs-comment">// Save the Database</span>
+<span class="hljs-keyword">await</span> database.saveData();</code></pre>
+				<a href="#use-yaml" id="use-yaml" style="color: inherit; text-decoration: none;">
+					<h3>Use Yaml</h3>
+				</a>
+				<p>If you want to use yaml instead, replace the json adapter with a yaml adapter and install <code>js-yaml</code> api
+					<br><br>
+				install <code>js-yaml</code> using npm</p>
+				<pre><code class="language-sh">npm i js-yaml</code></pre>
+				<p>Import using Typescript</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { YamlFileAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb/yaml_adapter&#x27;</span>;</code></pre>
+				<p>Import using Javascript</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { YamlFileAdapter } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb/yaml_adapter&#x27;</span>);</code></pre>
+				<p>Database creation</p>
+				<pre><code class="language-js"><span class="hljs-keyword">let</span> database = <span class="hljs-keyword">await</span> createDatabase(<span class="hljs-keyword">new</span> JsonFileAdapter(<span class="hljs-string">&quot;./database.json&quot;</span>));</code></pre>
+				<a href="#synchronous-usage" id="synchronous-usage" style="color: inherit; text-decoration: none;">
+					<h3>Synchronous Usage</h3>
+				</a>
+				<p><em><strong>Warning:</strong> Using synchronus versions of some adapters may slow down you application.</em></p>
+				<p>First of all use the synchronous adapters of the adapter
+					<br><br>
+				Typescript</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { createDatabase } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb&#x27;</span>;
+<span class="hljs-keyword">import</span> { SyncJsonFileAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>;</code></pre>
+				<p>Javascript</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { createDatabase } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb&#x27;</span>);
+<span class="hljs-keyword">const</span> { SyncJsonFileAdapter } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>);</code></pre>
+				<p>Now you can use the normal quickstart, but no await is needed anymore</p>
+				<pre><code class="language-js"><span class="hljs-keyword">let</span> database = createDatabase(<span class="hljs-keyword">new</span> JsonFileAdapter(<span class="hljs-string">&quot;./database.json&quot;</span>));
+
+<span class="hljs-comment">// Set defaults</span>
+database.setDefaults({
+  <span class="hljs-attr">users</span>: []
+});
+
+<span class="hljs-comment">// Push a value into the Database</span>
+<span class="hljs-keyword">let</span> users = database.get(<span class="hljs-string">&quot;users&quot;</span>);
+users.push({
+  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Harleen Dolan&#x27;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;a password&#x27;</span>
+});
+
+users.push({
+  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Lisa Bradley&#x27;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;another password&#x27;</span>
+});
+
+<span class="hljs-comment">// print output data from the database</span>
+<span class="hljs-built_in">console</span>.log(database.data);
+
+<span class="hljs-comment">// Console Output:</span>
+<span class="hljs-comment">// &gt;&gt; {</span>
+<span class="hljs-comment">// &gt;&gt;   users: [</span>
+<span class="hljs-comment">// &gt;&gt;     { id: 0, name: &#x27;Harleen Dolan&#x27;, password: &#x27;a password&#x27; },</span>
+<span class="hljs-comment">// &gt;&gt;     { id: 1, name: &#x27;Lisa Bradley&#x27;, password: &#x27;another password&#x27; }</span>
+<span class="hljs-comment">// &gt;&gt;   ],</span>
+<span class="hljs-comment">// &gt;&gt;   id_counters: { users: 1 }</span>
+<span class="hljs-comment">// &gt;&gt; }</span>
+
+<span class="hljs-comment">// Save the Database</span>
+database.saveData();</code></pre>
+				<p><em>For more examples, please refer to the <a href="https://github.com/nsc-de/js-database/wiki">Documentation</a></em></p>
+				<!-- ROADMAP -->
+				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
+					<h2>Roadmap</h2>
+				</a>
+				<p>See the <a href="https://github.com/nsc-de/js-database/issues">open issues</a> for a list of proposed features (and known issues).</p>
+				<!-- CONTRIBUTING -->
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+				<ol>
+					<li>Fork the Project</li>
+					<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+					<li>Commit your Changes (<code>git commit -m &#39;Add some AmazingFeature&#39;</code>)</li>
+					<li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
+					<li><a href="https://github.com/nsc-de/js-database/compare">Open a Pull Request</a></li>
+				</ol>
+				<!-- LICENSE -->
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Distributed under the BSD2-Clause License. See <code>LICENSE</code> for more information.</p>
+				<!-- CONTACT -->
+				<a href="#contact" id="contact" style="color: inherit; text-decoration: none;">
+					<h2>Contact</h2>
+				</a>
+				<p>Project Link: <a href="https://github.com/nsc-de/js-database">https://github.com/nsc-de/js-database</a></p>
+				<hr>
+				<p align="right">
+					<a href="https://github.com/nsc-de/js-database">js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a> | <a href="https://github.com/nsc-de/js-database">GitHub</a> | <a href="https://www.npmjs.com/package/nscdb">NPM</a>
+				</p>
+				<!-- MARKDOWN LINKS & IMAGES -->
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_database_.html">&quot;database&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_json_adapter_.html">&quot;json_<wbr>adapter&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_yaml_adapter_.html">&quot;yaml_<wbr>adapter&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a>, the 2020-10-12 at 18:15:46</p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
