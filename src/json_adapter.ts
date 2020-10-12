@@ -5,12 +5,16 @@ import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
 
 
+
+
+
 /**
  * JsonFileAdapter is an async adapter for working with Json Files
  * 
  * @author Nicolas Schmidt
  */
 export class JsonFileAdapter implements DatabaseAdapter {
+
 
   /**
    * The settings for the JsonFileAdapter: <br/>
@@ -22,6 +26,7 @@ export class JsonFileAdapter implements DatabaseAdapter {
    * @see JsonFileAdapter - 👩‍👦 the parent class
    */
   readonly settings: JsonAdapterSettings;
+
 
   /**
    * The constructor for JsonFileAdapter
@@ -97,7 +102,17 @@ export class JsonFileAdapter implements DatabaseAdapter {
   } 
 }
 
+
+
+
+
+/**
+ * SyncJsonFileAdapter is an sync adapter for working with Json Files
+ * 
+ * @author Nicolas Schmidt
+ */
 export class SyncJsonFileAdapter implements SyncDatabaseAdapter {
+
 
   /**
    * The settings for the SyncJsonFileAdapter: <br/>
@@ -109,6 +124,7 @@ export class SyncJsonFileAdapter implements SyncDatabaseAdapter {
    * @see SyncJsonFileAdapter - 👩‍👦 the parent class
    */
   readonly settings: JsonAdapterSettings;
+
 
   /**
    * The constructor for SyncJsonFileAdapter
@@ -171,20 +187,9 @@ export class SyncJsonFileAdapter implements SyncDatabaseAdapter {
   } 
 }
 
-function generateJson(object: any, settings: JsonAdapterSettings): string {
-  return settings.beautify ? 
-    JSON.stringify(object, null, settings.beautify_space) : 
-    JSON.stringify(object)
-}
 
-function createDefaultSettings(settings: JsonAdapterSettingsInput): JsonAdapterSettings {
 
-  settings.beautify = settings.beautify || false;
-  settings.beautify_space = settings.beautify_space || 2;
 
-  return <JsonAdapterSettings> settings;
-
-}
 
 /**
  * The settings for JsonFileAdapter or SyncJsonFileAdapter:
@@ -203,6 +208,7 @@ export interface JsonAdapterSettingsInput {
   beautify_space?: number
 }
 
+
 /**
  * The settings for JsonFileAdapter or SyncJsonFileAdapter:
  *   beautify - should the generated json be beautified (default: false)
@@ -216,4 +222,26 @@ export interface JsonAdapterSettingsInput {
 export interface JsonAdapterSettings { 
   beautify: false, 
   beautify_space: number
+}
+
+
+
+
+
+// ----------------------------------------------------------
+// Purely functional, not exported, just used by the adapters
+
+function generateJson(object: any, settings: JsonAdapterSettings): string {
+  return settings.beautify ? 
+    JSON.stringify(object, null, settings.beautify_space) : 
+    JSON.stringify(object)
+}
+
+function createDefaultSettings(settings: JsonAdapterSettingsInput): JsonAdapterSettings {
+
+  settings.beautify = settings.beautify || false;
+  settings.beautify_space = settings.beautify_space || 2;
+
+  return <JsonAdapterSettings> settings;
+
 }
