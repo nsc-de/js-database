@@ -18,7 +18,9 @@
   <p align="center">
     A simple lightweight package to manage data
     <br />
-    <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Read the Wiki »</strong></a>
+    <br />
+    <a href="https://nsc-de.github.io/js-database/"><strong>Explore the typedoc »</strong></a>
     <br />
     <br />
     <a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart">Quickstart</a>
