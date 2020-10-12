@@ -5,11 +5,10 @@ import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
 
 
-// js-yaml import. Throw an error if it is not install
+// js-yaml import. Throw an error if it is not installed
 let yaml: typeof import("js-yaml");
 try {
   yaml = require('js-yaml');
-  console.log(require.resolve('js-yaml'));
 } catch(e) {
   let err = new Error("You should have installed js-yaml if you want to use the yaml-adapter");
   err.stack += '\nCaused by: '+ err.message + err.stack;
