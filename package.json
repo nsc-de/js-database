@@ -24,9 +24,7 @@
   ],
   "author": "Nicolas Schmidt <https://github.com/nsc-de>",
   "license": "BSD-2-Clause",
-  "optionalDependencies": {
-    "js-yaml": "^3.14.0"
-  },
+  "optionalDependencies": {},
   "devDependencies": {
     "@types/js-yaml": "^3.12.5",
     "@types/node": "^14.10.1",
