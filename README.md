@@ -75,6 +75,8 @@
 * [mocha](https://www.npmjs.com/package/mocha)@^[8.1.3](https://www.npmjs.com/package/mocha/v/8.1.3) - all tests are written using mocha
 * [source-map-support](https://www.npmjs.com/package/source-map-support)@^[0.5.19](https://www.npmjs.com/package/source-map-support/v/0.5.19) - show errors in typescipt
 * [typescript](https://www.npmjs.com/package/typescript)@^[4.0.3](https://www.npmjs.com/package/typescript/v/4.0.3) - the typescript compiler
+* [typedoc](https://www.npmjs.com/package/typedoc)@^[0.19.2](https://www.npmjs.com/package/typedoc/v/0.19.2) - for documenting typescript files
+* [typedoc-plugin-extras](https://www.npmjs.com/package/typedoc-plugin-extras)@^[^1.1.6](https://www.npmjs.com/package/typedoc-plugin-extras/v/1.1.6) - a typedoc plugin to add a favicon to the docs
 
 
 
