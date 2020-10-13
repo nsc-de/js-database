@@ -1,11 +1,11 @@
 /**
- * This interface describes an adapter to load / save databases. It is required for the {@link SyncDatabase} class
+ * This interface describes an adapter to load / save databases. It is required for the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) class
  *
  * @author Nicolas Schmidt
  *
- * @see SyncDatabase - The user of this interface
- * @see SyncDatabaseAdapter.save - 💾 the save method of the SyncDatabaseAdapter
- * @see SyncDatabaseAdapter.load - 💾 the save method of the SyncDatabaseAdapter
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - The user of this interface
+ * @see [SyncDatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save method of the [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
+ * @see [SyncDatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#load) - 💾 the load method of the [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
  */
 export interface SyncDatabaseAdapter {
 
@@ -15,9 +15,8 @@ export interface SyncDatabaseAdapter {
    * @author Nicolas Schmidt
    * @param data 💾 the data to save
    *
-   * @see DatabaseAdapter - 👩‍👦 the parent interface
-   * @see DatabaseAdapter.load - 💾 the load function
-   *
+   * @see [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html) - 👩‍👦 the parent interface
+   * @see [SyncDatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html#load) - 💾 the load function
    */
   save(data: JSObject): void;
 
@@ -27,21 +26,21 @@ export interface SyncDatabaseAdapter {
    * @author Nicolas Schmidt
    * @return 💾 loads the data
    *
-   * @see DatabaseAdapter - 👩‍👦 the parent interface
-   * @see DatabaseAdapter.save - 💾 the save function
+   * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
+   * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save function
    */
   load(): JSObject;
 
 }
 
 /**
- * This interface describes an adapter to load / save databases. It is required for the {@link Database} class
+ * This interface describes an adapter to load / save databases. It is required for the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) class
  *
  * @author Nicolas Schmidt
  *
- * @see Database - The user of this interface
- * @see DatabaseAdapter.save - 💾 the save method of the DatabaseAdapter
- * @see DatabaseAdapter.load - 💾 the save method of the DatabaseAdapter
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - The user of this interface
+ * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save method of the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
+ * @see [DatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#load) - 💾 the load method of the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
  */
 export interface DatabaseAdapter {
 
@@ -52,9 +51,8 @@ export interface DatabaseAdapter {
    * @param data 💾 the data to save
    * @returns ⌛ Promise (Ready when saved) >> ⛔ void
    *
-   * @see DatabaseAdapter - 👩‍👦 the parent interface
-   * @see DatabaseAdapter.load - 💾 the load function
-   *
+   * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
+   * @see [DatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#load) - 💾 the load function
    */
   save(data: JSObject): Promise<void>;
 
@@ -64,8 +62,8 @@ export interface DatabaseAdapter {
    * @author Nicolas Schmidt
    * @return ⌛ Promise (Ready when data is loaded) >> 💾 the data
    *
-   * @see DatabaseAdapter - 👩‍👦 the parent interface
-   * @see DatabaseAdapter.save - 💾 the save function
+   * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
+   * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save function
    */
   load(): Promise<JSObject>;
 
@@ -76,60 +74,56 @@ export interface DatabaseAdapter {
 
 
 /**
- * 🔨 Creates an DatabaseArray from a given array
+ * 🔨 Creates an [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) from a given array
  *
  * @author Nicolas Schmidt
  * @param val 🏡 the value to create a database-value from
- * @returns 🔨 the DatabaseArray representation of the given array
+ * @returns 🔨 the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) representation of the given array
  *
- * @see DatabaseArray
- * @see createDatabaseValue
- *
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : any[]) : DatabaseArray;
 
 /**
- * 🔨 Creates an DatabaseObject from a given object
+ * 🔨 Creates an [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) from a given object
  *
  * @author Nicolas Schmidt
- * @param val 🏡 the object to create a "DatabaseObject" from
- * @returns 🔨 the DatabaseObject-representation of the given object
+ * @param val 🏡 the object to create a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) from
+ * @returns 🔨 the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)-representation of the given object
  *
- * @see DatabaseObject
- * @see createDatabaseValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : JSObject) : DatabaseObject;
 
 /**
  * This function is not realy usefull. It gives just the input back.
  * It is just implemented that you don't get an error when you give
- * a DatabaseObject as argument.
+ * a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) as argument.
  *
  * @author Nicolas Schmidt
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 🏡 the value to create a database-value from
- * @returns ⛔ the same DatabaseObject that is given as input
+ * @returns ⛔ the same [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) that is given as input
  *
- * @see DatabaseObject
- * @see createDatabaseValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
 
 /**
  * This function is not realy usefull. It gives just the input back.
  * It is just implemented that you don't get an error when you give
- * a DatabaseArray as argument.
+ * a [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) as argument.
  *
  * @author Nicolas Schmidt
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 📋 the value to create a database-value from
- * @returns ⛔ the same DatabaseArray that is given as input
+ * @returns ⛔ the same [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) that is given as input
  *
- * @see DatabaseArray
- * @see createDatabaseValue
- *
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
 
@@ -143,8 +137,7 @@ export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
  * @param val 📋 the value to create a database-value from
  * @returns ⛔ the same string that is given as input
  *
- * @see createDatabaseValue
- *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : string) : string;
 
@@ -158,8 +151,7 @@ export function createDatabaseValue(val : string) : string;
  * @param val 1️⃣ the value to create a database-value from
  * @returns ⛔ the same number that is given as input
  *
- * @see createDatabaseValue
- *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : number) : number;
 
@@ -173,8 +165,7 @@ export function createDatabaseValue(val : number) : number;
  * @param val ❓ the value to create a database-value from
  * @returns ⛔ the same boolean that is given as input
  *
- * @see createDatabaseValue
- *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : boolean) : boolean;
 
@@ -188,8 +179,7 @@ export function createDatabaseValue(val : boolean) : boolean;
  * @param val ❓ null
  * @returns ⛔ null
  *
- * @see createDatabaseValue
- *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : null) : null;
 
@@ -203,28 +193,29 @@ export function createDatabaseValue(val : null) : null;
  * @param val ❓ undefined
  * @returns ⛔ undefined
  *
- * @see createDatabaseValue
- *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : undefined) : undefined;
 
 /**
- * Creates a DatabaseValue from a given value
+ * Creates a [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue) from a given value
  *
  * @author Nicolas Schmidt
  * @param val 🏡 the value to create a database-value from
  * @returns the database-value
  *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue;
 
 /**
- * Implementation for the createDatabaseValue function
+ * Implementation for the [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue) function
  *
  * @author Nicolas Schmidt
  * @param val 🏡 the value to create a database-value from
  * @returns the database-value
  *
+ * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
 export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
   if (val instanceof DatabaseObject || val instanceof DatabaseArray) return val;
@@ -238,33 +229,31 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
 
 
 /**
- * 🔨 Creates a normal array from a given DatabaseArray
+ * 🔨 Creates a normal array from a given [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
  *
  * @author Nicolas Schmidt
- * @param val 📋 the DatabaseArray you want to convert back to a normal value
+ * @param val 📋 the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) you want to convert back to a normal value
  * @returns 🔨 the simple array
  *
- * @see DatabaseObject
- * @see getNormalValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : DatabaseArray): any[];
 
 /**
- * 🔨 Creates a normal object from a given DatabaseObject
+ * 🔨 Creates a normal object from a given [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  *
  * @author Nicolas Schmidt
- * @param val 🏡 the DatabaseObject you want to convert back to a normal value
+ * @param val 🏡 the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) you want to convert back to a normal value
  * @returns 🔨 the simple object
  *
- * @see DatabaseObject
- * @see getNormalValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : DatabaseObject): JSObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a array as argument.
  *
@@ -273,14 +262,13 @@ export function getNormalValue(val : DatabaseObject): JSObject;
  * @param val 🏡 the array you want to convert back to a normal value
  * @returns ⛔ the same array that was given as input
  *
- * @see DatabaseObject
- * @see getNormalValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : any[]): any[];
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a object as argument.
  *
@@ -289,14 +277,13 @@ export function getNormalValue(val : any[]): any[];
  * @param val 🏡 the object you want to convert back to a normal value
  * @returns ⛔ the same object that was given as input
  *
- * @see DatabaseObject
- * @see getNormalValue
- *
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : JSObject): JSObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a string as argument.
  *
@@ -305,13 +292,12 @@ export function getNormalValue(val : JSObject): JSObject;
  * @param val 📋 the string you want to convert back to a normal value
  * @returns ⛔ the same string that was given as input
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : string): string;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a number as argument.
  *
@@ -320,13 +306,12 @@ export function getNormalValue(val : string): string;
  * @param val 1️⃣ the number you want to convert back to a normal value
  * @returns ⛔ the same number that was given as input
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : number): number;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a boolean as argument.
  *
@@ -335,13 +320,12 @@ export function getNormalValue(val : number): number;
  * @param val ❓ the boolean you want to convert back to a normal value
  * @returns ⛔ the same boolean that was given as input
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : boolean ): boolean;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * null as argument.
  *
@@ -350,13 +334,12 @@ export function getNormalValue(val : boolean ): boolean;
  * @param val ❓ null
  * @returns ⛔ null
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : null ): null;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * undefined as argument.
  *
@@ -365,33 +348,30 @@ export function getNormalValue(val : null ): null;
  * @param val ❓ undefined
  * @returns ⛔ undefined
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : undefined ): undefined;
 
 /**
- * creates the 'normal' value from database-objects
+ * creates the 'normal' value from [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue)
  *
  * @author Nicolas Schmidt
  * @param val 🏡 the value you want to convert back to a normal value
  * @returns the 'normal' value
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble;
 
 /**
  * [implementation]
- * creates the 'normal' value from database-objects
+ * creates the 'normal' value from a [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue)
  *
  * @author Nicolas Schmidt
  * @param val 🏡 the value you want to convert back to a normal value
  * @returns the 'normal' value
  *
- * @see getNormalValue
- *
+ * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
   if(val instanceof DatabaseObject || val instanceof  DatabaseArray) return val.data;
@@ -403,43 +383,42 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
 
 
 /**
- * A DatabaseArray is the database-representation of an array.
+ * A [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) is the database-representation of an array.
  *
  * @author Nicolas Schmidt
  *
- * @see DatabaseArray.data
- * @see DatabaseArray.constructor
- * @see DatabaseArray.set - sets a value from the DatabaseArray
- * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
- * @see DatabaseArray.get - gets a value from the DatabaseArray
- * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
- * @see DatabaseArray.update - updates a value from the DatabaseArray
- * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
- * @see DatabaseArray.push - push a value into the DatabaseArray
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the data of the array
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[length](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#length) - the array length
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[constructor()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#constructor) - the constructor
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[set()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#set) - sets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[setDefault()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#setDefault) - sets a default value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[get()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#get) - gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[getNormal()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#getNormal) - gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) and normalizes it
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[update()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#update) - updates a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[contains()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#contains) - checks if the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) contains a value
+ * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[push()](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#push) - push a value into the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
  */
 export class DatabaseArray {
 
   
   /**
-   * The real array-contents of the DatabaseArray
+   * The real array-contents of the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.data - the getter and setter for the data
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the getter and setter for the data
    */
   protected _data!: any[];
 
 
   /**
-   * The data of the DatabaseArray
+   * The data of the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray._data - the storage for the data
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[_data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#_data) - the storage for the data
    */
   public set data(data : DatabaseInsertable[]) {
     this._data = [];
@@ -458,9 +437,8 @@ export class DatabaseArray {
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.data - the data of the array
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the data of the array
    */
   public get length(): number {
     return this._data.length;
@@ -468,14 +446,13 @@ export class DatabaseArray {
 
 
   /**
-   * Constructor for DatabaseArray
+   * Constructor for [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
    * @author Nicolas Schmidt
    * @param data the data for the database-array
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.data - the argument you give to the constructor
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the argument you give to the constructor
    */
   constructor(
     data: Array<any> = [],
@@ -483,21 +460,14 @@ export class DatabaseArray {
 
 
   /**
-   * Sets a value from the DatabaseArray.
+   * Sets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
    * @returns the DatabaseArray itself, so you can chain operations like that
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.get - gets a value from the DatabaseArray
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.update - updates a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public set(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
 
@@ -520,22 +490,14 @@ export class DatabaseArray {
 
 
   /**
-   * Sets a default value from the DatabaseArray.
+   * Sets a default value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
-   * @returns the DatabaseArray itself, so you can chain operations like that
+   * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.get - gets a value from the DatabaseArray
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.update - updates a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public setDefault(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
     if(!this.contains(key)) this.set(key, value);
@@ -544,20 +506,13 @@ export class DatabaseArray {
 
   
   /**
-   * Gets a value from the DatabaseArray.
+   * Gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to get
    * @returns the value of the key
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.update - updates a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public get(key: number | string | Array<string | number>): DatabaseValue {
 
@@ -576,20 +531,13 @@ export class DatabaseArray {
 
   
   /**
-   * Gets a value from the DatabaseArray normalizes it
+   * Gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) normalizes it
    *
    * @author Nicolas Schmidt
    * @param key the path to get
    * @returns the value of the key
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.get - gets a value from the DatabaseArray
-   * @see DatabaseArray.update - updates a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public getNormal(key: number | string | Array<string | number>): DatabaseValueAble {
     return getNormalValue(this.get(key));
@@ -597,21 +545,14 @@ export class DatabaseArray {
 
 
   /**
-   * Upates a value from the DatabaseArray.
+   * Upates a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to update
    * @param update the funciton to update the value
-   * @returns the DatabaseArray itself, so you can chain operations like that
+   * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.get - gets a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public update(key: number | string | Array<string | number>, update: (e : DatabaseValue) =>  DatabaseInsertable ): this {
     this.set(key, update(this.get(key)));
@@ -620,20 +561,13 @@ export class DatabaseArray {
 
 
   /**
-   * Checks if the DatabaseArray contains a value
+   * Checks if the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) contains a value
    *
    * @author Nicolas Schmidt
    * @param key the path to check
    * @returns does the array contains the value
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.get - gets a value from the DatabaseObject
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.update - updates a value from the DatabaseObject
-   * @see DatabaseArray.push - push a value into the DatabaseArray
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public contains(key: number | string | Array<string | number>): boolean {
 
@@ -652,20 +586,13 @@ export class DatabaseArray {
 
 
   /**
-   * Pushs a value into the DatabaseArray
+   * Pushs a value into the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
    * @author Nicolas Schmidt
    * @param value the value to push into the array
-   * @returns the DatabaseArray itself, so you can chain operations like that
+   * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.set - sets a value from the DatabaseArray
-   * @see DatabaseArray.setDefault - sets default a value from the DatabaseArray
-   * @see DatabaseArray.get - gets a value from the DatabaseArray
-   * @see DatabaseArray.getNormal - gets a value from the DatabaseArray and normalizes it
-   * @see DatabaseArray.update - updates a value from the DatabaseArray
-   * @see DatabaseArray.contains - checks if the DatabaseArray contains a value
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public push(...values: DatabaseInsertable[]): this {
 
@@ -680,15 +607,21 @@ export class DatabaseArray {
 
 
 /**
- * A DatabaseObject is the database-representation of an object.
+ * A [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) is the database-representation of an object.
  *
  * @author Nicolas Schmidt
  *
- * @see DatabaseObject.data
- * @see DatabaseObject.constructor
- * @see DatabaseObject.set
- * @see DatabaseObject.get
- * @see DatabaseObject.update
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#data) - the data of the array
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[length](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#length) - the array length
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[constructor()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#constructor) - the constructor
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[set()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#set) - sets a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[setDefault()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#setDefault) - sets a default value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[setDefaults()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#setDefaults) - sets defaults for the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[get()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#get) - gets a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[getNormal()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#getNormal) - gets a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) and normalizes it
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[update()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#update) - updates a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[contains()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#contains) - checks if the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) contains a value
+ * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[generateId()](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#contains) - Generates an id using a namespace
  */
 export class DatabaseObject {
 
@@ -698,9 +631,8 @@ export class DatabaseObject {
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.data - the getter and setter for the data
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).data - the getter and setter for the data
    */
   protected _data!: JSObject;
 
@@ -710,9 +642,8 @@ export class DatabaseObject {
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject._data - the storage for the data
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)._data - the storage for the data
    */
   public set data(data : JSObject) {
     this._data = [];
@@ -731,9 +662,8 @@ export class DatabaseObject {
    *
    * @author Nicolas Schmidt
    *
-   * @see DatabaseArray - 👩‍👦 the parent class
-   * @see DatabaseArray.data - the data of the array
-   *
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
+   * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).data - the data of the array
    */
   public get length(): number {
     return Object.keys(this._data).length;
@@ -746,9 +676,8 @@ export class DatabaseObject {
    * @author Nicolas Schmidt
    * @param data the data for the database-array
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.data - the argument you give to the constructor
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).data - the argument you give to the constructor
    */
   constructor(
     data: JSObject = {},
@@ -763,12 +692,7 @@ export class DatabaseObject {
    * @param value the value to apply to the given path
    * @returns the DatabaseObject itself, so you can chain operations like that
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.getNormal - gets a normalized value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public set(key: string | Array<string | number>, value : DatabaseInsertable): this {
     if(typeof key == "string") return this.set(key.split(/[.\[\]]/g), value);
@@ -786,20 +710,16 @@ export class DatabaseObject {
     return this;
   }
 
+
   /**
-   * Sets a default value from the DatabaseObject.
+   * Sets a default value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
-   * @returns the DatabaseObject itself, so you can chain operations like that
+   * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public setDefault(key: string | Array<string | number>, value : DatabaseInsertable): this {
     if(!this.contains(key)) this.set(key, value);
@@ -812,14 +732,9 @@ export class DatabaseObject {
    *
    * @author Nicolas Schmidt
    * @param defaults an object containing all the default values
-   * @returns the DatabaseObject itself, so you can chain operations like that
+   * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public setDefaults (defaults : JSObject): this {
     Object.keys(defaults).forEach(k => {
@@ -837,12 +752,7 @@ export class DatabaseObject {
    * @param key the path to get
    * @returns the value at the position
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.getNormal - gets a normalized value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public get(key: string | Array<string | number>): DatabaseValue {
 
@@ -860,18 +770,13 @@ export class DatabaseObject {
 
 
   /**
-   * Gets a value from the DatabaseObject and normalizes it
+   * Gets a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) and normalizes it
    *
    * @author Nicolas Schmidt
    * @param key the path to get
    * @returns the normalized value at the position
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public getNormal(key: string | Array<string | number>): DatabaseValueAble {
     return getNormalValue(this.get(key));
@@ -879,18 +784,14 @@ export class DatabaseObject {
 
 
   /**
-   * Updates a value from the DatabaseObject.
+   * Updates a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).
    *
    * @author Nicolas Schmidt
    * @param key the path to update
    * @param update the function to update the value
-   * @returns the DatabaseObject itself, so you can chain operations like that
+   * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.contains - checks if the DatabaseObject contains a value
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public update(key: string | Array<string | number>, update: (e :  DatabaseValue ) =>  DatabaseInsertable): this {
     this.set(key, update(this.get(key)));
@@ -898,27 +799,16 @@ export class DatabaseObject {
   }
 
 
-  public generateId(name: string): number {
-    let counter: string = `id_counters.${name}`;
-    if(this.get(counter) == null) this.set(counter, -1);
-    return <number> this.update(counter, (e) => (<number>e)+1).get(counter);
-  }
-
   /**
-   * Checks if the DatabaseObject contains a value
+   * Checks if the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) contains a value
    *
    * @author Nicolas Schmidt
    * @param key the path to apply the value to
    * @returns the value at the position of the position
    *
-   * @see DatabaseObject - 👩‍👦 the parent class
-   * @see DatabaseObject.set - sets a value from the DatabaseObject
-   * @see DatabaseObject.get - gets a value from the DatabaseObject
-   * @see DatabaseObject.update - updates a value from the DatabaseObject
-   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public contains(key: string | Array<string | number>): boolean {
-
     if(typeof key == "string") return this.contains(key.split(/[.\[\]]/g));
     else {
       if(key.length > 1) {
@@ -931,6 +821,21 @@ export class DatabaseObject {
     }
   }
 
+
+  /**
+   * Generates an using a namespace
+   * 
+   * @author Nicolas Schmidt
+   * @param name the name to generate a namespace from
+   * @returns the generated id
+   *
+   * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
+   */
+  public generateId(name: string): number {
+    let counter: string = `id_counters.${name}`;
+    if(this.get(counter) == null) this.set(counter, -1);
+    return <number> this.update(counter, (e) => (<number>e)+1).get(counter);
+  }
 }
 
 
@@ -938,30 +843,35 @@ export class DatabaseObject {
 
 
 /**
- * Database class is basically a DatabaseObject with save and load functionality
+ * Database class is basically a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) with save and load functionality
  *
- * @see SyncDatabase
- * @see Database.saveData
- * @see Database.reloadData
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - A database that works sync instead of using promises
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[constructor()](https://nsc-de.github.io/js-database/classes/_database_.database.html#constructor) - the constructor
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[saveData()](https://nsc-de.github.io/js-database/classes/_database_.database.html#savedata) - saves the data to the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[reloadData()](https://nsc-de.github.io/js-database/classes/_database_.database.html#reloaddata) - loads the data from the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
  *
- * @see DatabaseObject
- * @see DatabaseObject.data
- * @see DatabaseObject.constructor
- * @see DatabaseObject.set
- * @see DatabaseObject.get
- * @see DatabaseObject.update
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[data](https://nsc-de.github.io/js-database/classes/_database_.database.html#data) - the data of the array
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[length](https://nsc-de.github.io/js-database/classes/_database_.database.html#length) - the array length
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[set()](https://nsc-de.github.io/js-database/classes/_database_.database.html#set) - sets a value from the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[setDefault()](https://nsc-de.github.io/js-database/classes/_database_.database.html#setDefault) - sets a default value from the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[setDefaults()](https://nsc-de.github.io/js-database/classes/_database_.database.html#setDefaults) - sets defaults for the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[get()](https://nsc-de.github.io/js-database/classes/_database_.database.html#get) - gets a value from the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[getNormal()](https://nsc-de.github.io/js-database/classes/_database_.database.html#getNormal) - gets a value from the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) and normalizes it
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[update()](https://nsc-de.github.io/js-database/classes/_database_.database.html#update) - updates a value from the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html)
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[contains()](https://nsc-de.github.io/js-database/classes/_database_.database.html#contains) - checks if the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) contains a value
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html).[generateId()](https://nsc-de.github.io/js-database/classes/_database_.database.html#contains) - checks if the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - Generates an id using a namespace
  */
 export class Database extends DatabaseObject {
 
 
   /**
-   * Constructor for Database class
+   * 🔨 Constructor for Database class
    *
    * @author Nicolas Schmidt
    * @param adapter the adapter to get the data from / save the data to
    * @param data the data to create the database with
    *
-   * @see Database - 👩‍👦 the parent class
+   * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
    */
   constructor(
     public adapter: DatabaseAdapter,
@@ -972,18 +882,22 @@ export class Database extends DatabaseObject {
   }
 
   /**
-   * Save the data from the database
+   * 💾 Save the data from the database
    *
    * @author Nicolas Schmidt
    * @returns ⌛ Promise (Ready when saved) >> the database itself, so you can chain operations
+   *
+   * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
    */
   public async saveData (): Promise<this> { await this.adapter.save(this.data); return this; }
 
   /**
-   * Reload the data from the database
+   * 🔄 Reload the data from the database
    *
    * @author Nicolas Schmidt
    * @returns ⌛ Promise (Ready when loaded) >> the database itself, so you can chain operations
+   *
+   * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
    */
   public async reloadData(): Promise<this> { this.data = await this.adapter.load(); return this; }
 
@@ -994,18 +908,24 @@ export class Database extends DatabaseObject {
 
 
 /**
- * SyncDatabase is a database that does not use promises.
+ * SyncDatabase class is basically a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) with save and load functionality. 
+ * It is written synchronously (without using promises)
  *
- * @see Database
- * @see SyncDatabase.saveData
- * @see SyncDatabase.reloadData
+ * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - A database that works using promises for better performance
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[constructor()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#constructor) - the constructor
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[saveData()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#savedata) - saves the data to the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[reloadData()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#reloaddata) - loads the data from the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html)
  *
- * @see DatabaseObject
- * @see DatabaseObject.data
- * @see DatabaseObject.constructor
- * @see DatabaseObject.set
- * @see DatabaseObject.get
- * @see DatabaseObject.update
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[data](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#data) - the data of the array
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[length](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#length) - the array length
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[set()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#set) - sets a value from the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[setDefault()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#setDefault) - sets a default value from the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[setDefaults()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#setDefaults) - sets defaults for the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[get()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#get) - gets a value from the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[getNormal()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#getNormal) - gets a value from the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) and normalizes it
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[update()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#update) - updates a value from the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html)
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[contains()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#contains) - checks if the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) contains a value
+ * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html).[generateId()](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html#contains) - checks if the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - Generates an id using a namespace
  */
 export class SyncDatabase extends DatabaseObject {
 
@@ -1017,7 +937,7 @@ export class SyncDatabase extends DatabaseObject {
    * @param adapter the adapter to get the data from / save the data to
    * @param data the data to create the database with
    *
-   * @see Database - 👩‍👦 the parent class
+   * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - 👩‍👦 the parent class
    */
   constructor(
     public adapter: SyncDatabaseAdapter,
@@ -1028,18 +948,22 @@ export class SyncDatabase extends DatabaseObject {
   }
 
   /**
-   * Save the data from the database
+   * 💾 Save the data from the database
    *
    * @author Nicolas Schmidt
    * @returns the database itself, so you can chain operations
+   *
+   * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - 👩‍👦 the parent class
    */
   public saveData (): this { this.adapter.save(this.data); return this; }
 
   /**
-   * Reload the data from the database
+   * 🔄 Reload the data from the database
    *
    * @author Nicolas Schmidt
    * @returns the database itself, so you can chain operations
+   *
+   * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - 👩‍👦 the parent class
    */
   public reloadData(): this { this.data = this.adapter.load(); return this; }
 
@@ -1051,7 +975,6 @@ export class SyncDatabase extends DatabaseObject {
  * @author Nicolas Schmidt
  * @param adapter the databaseAdapter
  * @returns ⌛ Promise (Ready when loaded) >> the database
- *
  */
 export function createDatabase(adapter: DatabaseAdapter): Promise<Database>;
 
@@ -1061,7 +984,6 @@ export function createDatabase(adapter: DatabaseAdapter): Promise<Database>;
  * @author Nicolas Schmidt
  * @param adapter the databaseAdapter
  * @returns the SyncDatabase
- *
  */
 export function createDatabase(adapter: SyncDatabaseAdapter): SyncDatabase;
 
@@ -1071,7 +993,6 @@ export function createDatabase(adapter: SyncDatabaseAdapter): SyncDatabase;
  * @author Nicolas Schmidt
  * @param adapter the databaseAdapter
  * @returns the Database
- *
  */
 export function createDatabase(adapter: DatabaseAdapter | SyncDatabaseAdapter): Promise<Database> | SyncDatabase;
 export function createDatabase(adapter: DatabaseAdapter | SyncDatabaseAdapter): Promise<Database> | SyncDatabase {
