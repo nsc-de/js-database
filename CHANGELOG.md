@@ -5,13 +5,16 @@ Actual Version: [`0.1.2`](#0.1.2)
 ## 0.1.2
 _install using `npm i nscdb@0.1.2`_
 
-* Created documentation for json-adapter
-* Created documentation for yaml-adapter
-* Removed optional dependencies so you have to manually install them 
+* Improved documentation
+  * Created documentation for json-adapter
+  * Created documentation for yaml-adapter
+  * Improved documentation of the database and added documentation-reference-links
+  * added typedoc-documentation
+* Added settings to json-adapter to beautify generated json
+* Removed optional dependencies from package.json you have to manually install them 
   (so they will not be installed anymore if you don't need them)
   * Created custom error that is thrown in yaml-adapter when js-yaml is not 
     installed and you use the adapter
-* added typedoc-documentation
 * removed sourcemaps from production result to reduce package size
 * removed unnessesary debug log that was printed to the console
 
