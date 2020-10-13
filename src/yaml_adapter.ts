@@ -22,19 +22,18 @@ try {
 /**
  * YamlFileAdapter is an async adapter for working with Yaml Files
  * 
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  */
 export class YamlFileAdapter implements DatabaseAdapter {
 
 
   /**
-   * The constructor for YamlFileAdapter
+   * The constructor for [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html)
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param path the path to a yaml file to save to and load from
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see YamlFileAdapter - 👩‍👦 the parent class
+   * @see [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html) - 👩‍👦 the parent class
    */
   constructor(
     readonly path: string
@@ -44,12 +43,11 @@ export class YamlFileAdapter implements DatabaseAdapter {
   /**
    * Saves the given data to the file the adapter refers to
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data The data to save
    * @returns ⌛ Promise (Ready when saved) >> ⛔ void
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see YamlFileAdapter - 👩‍👦 the parent class
+   * @see [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html) - 👩‍👦 the parent class
    */
   save(data: JSObject): Promise<void> {
     return new Promise((rs, rj) => 
@@ -64,11 +62,10 @@ export class YamlFileAdapter implements DatabaseAdapter {
   /**
    * Loads data from the file the adapter refers to
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns ⌛ Promise (Ready when saved) >> Object
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see YamlFileAdapter - 👩‍👦 the parent class
+   * @see [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html) - 👩‍👦 the parent class
    */
   load(): Promise<JSObject> {
     return new Promise((rs, rj) => {
@@ -90,21 +87,20 @@ export class YamlFileAdapter implements DatabaseAdapter {
 
 
 /**
- * SyncYamlFileAdapter is an sync adapter for working with Yaml Files
+ * [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) is an sync adapter for working with Yaml Files
  * 
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  */
 export class SyncYamlFileAdapter implements SyncDatabaseAdapter {
 
 
   /**
-   * The constructor for SyncYamlFileAdapter
+   * The constructor for [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html)
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param path the path to a yaml file to save to and load from
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see SyncYamlFileAdapter - 👩‍👦 the parent class
+   * @see [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) - 👩‍👦 the parent class
    */
   constructor(
     readonly path: string
@@ -114,12 +110,11 @@ export class SyncYamlFileAdapter implements SyncDatabaseAdapter {
   /**
    * Saves the given data to the file the adapter refers to
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data The data to save
    * @returns ⌛ Promise (Ready when saved) >> ⛔ void
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see SyncYamlFileAdapter - 👩‍👦 the parent class
+   * @see [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) - 👩‍👦 the parent class
    */
   save(data: JSObject): void {
     mkdirsSync(path.dirname(this.path));
@@ -130,11 +125,10 @@ export class SyncYamlFileAdapter implements SyncDatabaseAdapter {
   /**
    * Loads data from the file the adapter refers to
    * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns ⌛ Promise (Ready when saved) >> Object
    * 
-   * @author Nicolas Schmidt
-   * 
-   * @see SyncYamlFileAdapter - 👩‍👦 the parent class
+   * @see [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) - 👩‍👦 the parent class
    */
   load(): JSObject {
     if(fs.existsSync(this.path)) return yaml.load(fs.readFileSync(this.path).toString());

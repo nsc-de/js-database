@@ -1,7 +1,7 @@
 /**
  * This interface describes an adapter to load / save databases. It is required for the [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) class
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  *
  * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - The user of this interface
  * @see [SyncDatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save method of the [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
@@ -12,7 +12,7 @@ export interface SyncDatabaseAdapter {
   /**
    * 💾 Saves the given data
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data 💾 the data to save
    *
    * @see [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html) - 👩‍👦 the parent interface
@@ -23,7 +23,7 @@ export interface SyncDatabaseAdapter {
   /**
    * 💾 loads data
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @return 💾 loads the data
    *
    * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
@@ -36,7 +36,7 @@ export interface SyncDatabaseAdapter {
 /**
  * This interface describes an adapter to load / save databases. It is required for the [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) class
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  *
  * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - The user of this interface
  * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save method of the [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html)
@@ -47,7 +47,7 @@ export interface DatabaseAdapter {
   /**
    * 💾 Saves the given data
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data 💾 the data to save
    * @returns ⌛ Promise (Ready when saved) >> ⛔ void
    *
@@ -59,7 +59,7 @@ export interface DatabaseAdapter {
   /**
    * 💾 loads the data
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @return ⌛ Promise (Ready when data is loaded) >> 💾 the data
    *
    * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
@@ -76,7 +76,7 @@ export interface DatabaseAdapter {
 /**
  * 🔨 Creates an [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) from a given array
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the value to create a database-value from
  * @returns 🔨 the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) representation of the given array
  *
@@ -88,7 +88,7 @@ export function createDatabaseValue(val : any[]) : DatabaseArray;
 /**
  * 🔨 Creates an [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) from a given object
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the object to create a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) from
  * @returns 🔨 the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)-representation of the given object
  *
@@ -102,7 +102,7 @@ export function createDatabaseValue(val : JSObject) : DatabaseObject;
  * It is just implemented that you don't get an error when you give
  * a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 🏡 the value to create a database-value from
  * @returns ⛔ the same [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) that is given as input
@@ -117,7 +117,7 @@ export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
  * It is just implemented that you don't get an error when you give
  * a [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 📋 the value to create a database-value from
  * @returns ⛔ the same [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) that is given as input
@@ -132,7 +132,7 @@ export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
  * It is just implemented that you don't get an error when you give
  * a string as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 📋 the value to create a database-value from
  * @returns ⛔ the same string that is given as input
@@ -146,7 +146,7 @@ export function createDatabaseValue(val : string) : string;
  * It is just implemented that you don't get an error when you give
  * a number as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 1️⃣ the value to create a database-value from
  * @returns ⛔ the same number that is given as input
@@ -160,7 +160,7 @@ export function createDatabaseValue(val : number) : number;
  * It is just implemented that you don't get an error when you give
  * a boolean as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ the value to create a database-value from
  * @returns ⛔ the same boolean that is given as input
@@ -174,7 +174,7 @@ export function createDatabaseValue(val : boolean) : boolean;
  * It is just implemented that you don't get an error when you give
  * null as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ null
  * @returns ⛔ null
@@ -188,7 +188,7 @@ export function createDatabaseValue(val : null) : null;
  * It is just implemented that you don't get an error when you give
  * undefined as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ undefined
  * @returns ⛔ undefined
@@ -200,7 +200,7 @@ export function createDatabaseValue(val : undefined) : undefined;
 /**
  * Creates a [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue) from a given value
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the value to create a database-value from
  * @returns the database-value
  *
@@ -211,7 +211,7 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue;
 /**
  * Implementation for the [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue) function
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the value to create a database-value from
  * @returns the database-value
  *
@@ -231,7 +231,7 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
 /**
  * 🔨 Creates a normal array from a given [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 📋 the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) you want to convert back to a normal value
  * @returns 🔨 the simple array
  *
@@ -243,7 +243,7 @@ export function getNormalValue(val : DatabaseArray): any[];
 /**
  * 🔨 Creates a normal object from a given [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) you want to convert back to a normal value
  * @returns 🔨 the simple object
  *
@@ -257,7 +257,7 @@ export function getNormalValue(val : DatabaseObject): JSObject;
  * It is just implemented that you don't get an error when you give
  * a array as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 🏡 the array you want to convert back to a normal value
  * @returns ⛔ the same array that was given as input
@@ -272,7 +272,7 @@ export function getNormalValue(val : any[]): any[];
  * It is just implemented that you don't get an error when you give
  * a object as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 🏡 the object you want to convert back to a normal value
  * @returns ⛔ the same object that was given as input
@@ -287,7 +287,7 @@ export function getNormalValue(val : JSObject): JSObject;
  * It is just implemented that you don't get an error when you give
  * a string as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 📋 the string you want to convert back to a normal value
  * @returns ⛔ the same string that was given as input
@@ -301,7 +301,7 @@ export function getNormalValue(val : string): string;
  * It is just implemented that you don't get an error when you give
  * a number as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val 1️⃣ the number you want to convert back to a normal value
  * @returns ⛔ the same number that was given as input
@@ -315,7 +315,7 @@ export function getNormalValue(val : number): number;
  * It is just implemented that you don't get an error when you give
  * a boolean as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ the boolean you want to convert back to a normal value
  * @returns ⛔ the same boolean that was given as input
@@ -329,7 +329,7 @@ export function getNormalValue(val : boolean ): boolean;
  * It is just implemented that you don't get an error when you give
  * null as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ null
  * @returns ⛔ null
@@ -343,7 +343,7 @@ export function getNormalValue(val : null ): null;
  * It is just implemented that you don't get an error when you give
  * undefined as argument.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @deprecated ⛔ Using this function with that argument does nothing and just slows down your process
  * @param val ❓ undefined
  * @returns ⛔ undefined
@@ -355,7 +355,7 @@ export function getNormalValue(val : undefined ): undefined;
 /**
  * creates the 'normal' value from [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue)
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the value you want to convert back to a normal value
  * @returns the 'normal' value
  *
@@ -367,7 +367,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble;
  * [implementation]
  * creates the 'normal' value from a [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue)
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param val 🏡 the value you want to convert back to a normal value
  * @returns the 'normal' value
  *
@@ -385,7 +385,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
 /**
  * A [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) is the database-representation of an array.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  *
  * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the data of the array
  * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[length](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#length) - the array length
@@ -404,7 +404,7 @@ export class DatabaseArray {
   /**
    * The real array-contents of the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the getter and setter for the data
@@ -415,7 +415,7 @@ export class DatabaseArray {
   /**
    * The data of the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[_data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#_data) - the storage for the data
@@ -435,7 +435,7 @@ export class DatabaseArray {
   /**
    * Returns the length of the array
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the data of the array
@@ -448,7 +448,7 @@ export class DatabaseArray {
   /**
    * Constructor for [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data the data for the database-array
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
@@ -462,7 +462,7 @@ export class DatabaseArray {
   /**
    * Sets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
    * @returns the DatabaseArray itself, so you can chain operations like that
@@ -492,7 +492,7 @@ export class DatabaseArray {
   /**
    * Sets a default value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
    * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
@@ -508,7 +508,7 @@ export class DatabaseArray {
   /**
    * Gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to get
    * @returns the value of the key
    *
@@ -533,7 +533,7 @@ export class DatabaseArray {
   /**
    * Gets a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) normalizes it
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to get
    * @returns the value of the key
    *
@@ -547,7 +547,7 @@ export class DatabaseArray {
   /**
    * Upates a value from the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to update
    * @param update the funciton to update the value
    * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
@@ -563,7 +563,7 @@ export class DatabaseArray {
   /**
    * Checks if the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) contains a value
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to check
    * @returns does the array contains the value
    *
@@ -588,7 +588,7 @@ export class DatabaseArray {
   /**
    * Pushs a value into the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param value the value to push into the array
    * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
    *
@@ -609,7 +609,7 @@ export class DatabaseArray {
 /**
  * A [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) is the database-representation of an object.
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  *
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#data) - the data of the array
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).[length](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html#length) - the array length
@@ -629,7 +629,7 @@ export class DatabaseObject {
   /**
    * The real object-contents of the DatabaseObject
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).data - the getter and setter for the data
@@ -640,7 +640,7 @@ export class DatabaseObject {
   /**
    * The data of the DatabaseObject
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)._data - the storage for the data
@@ -660,7 +660,7 @@ export class DatabaseObject {
   /**
    * Returns the length of the object
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).data - the data of the array
@@ -673,7 +673,7 @@ export class DatabaseObject {
   /**
    * Constructor for DatabaseObject
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param data the data for the database-array
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
@@ -687,7 +687,7 @@ export class DatabaseObject {
   /**
    * Sets a value from the DatabaseObject.
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
    * @returns the DatabaseObject itself, so you can chain operations like that
@@ -714,7 +714,7 @@ export class DatabaseObject {
   /**
    * Sets a default value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to apply the value to
    * @param value the value to apply to the given path
    * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
@@ -730,7 +730,7 @@ export class DatabaseObject {
   /**
    * Sets default values for the DatabaseObject.
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param defaults an object containing all the default values
    * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
    *
@@ -748,7 +748,7 @@ export class DatabaseObject {
   /**
    * Gets a value from the DatabaseObject.
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to get
    * @returns the value at the position
    *
@@ -772,7 +772,7 @@ export class DatabaseObject {
   /**
    * Gets a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) and normalizes it
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to get
    * @returns the normalized value at the position
    *
@@ -786,7 +786,7 @@ export class DatabaseObject {
   /**
    * Updates a value from the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html).
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to update
    * @param update the function to update the value
    * @returns the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) itself, so you can chain operations like that
@@ -802,7 +802,7 @@ export class DatabaseObject {
   /**
    * Checks if the [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) contains a value
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to apply the value to
    * @returns the value at the position of the position
    *
@@ -825,7 +825,7 @@ export class DatabaseObject {
   /**
    * Generates an using a namespace
    * 
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param name the name to generate a namespace from
    * @returns the generated id
    *
@@ -867,7 +867,7 @@ export class Database extends DatabaseObject {
   /**
    * 🔨 Constructor for Database class
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param adapter the adapter to get the data from / save the data to
    * @param data the data to create the database with
    *
@@ -884,7 +884,7 @@ export class Database extends DatabaseObject {
   /**
    * 💾 Save the data from the database
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns ⌛ Promise (Ready when saved) >> the database itself, so you can chain operations
    *
    * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
@@ -894,7 +894,7 @@ export class Database extends DatabaseObject {
   /**
    * 🔄 Reload the data from the database
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns ⌛ Promise (Ready when loaded) >> the database itself, so you can chain operations
    *
    * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
@@ -933,7 +933,7 @@ export class SyncDatabase extends DatabaseObject {
   /**
    * Constructor for Database class
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param adapter the adapter to get the data from / save the data to
    * @param data the data to create the database with
    *
@@ -950,7 +950,7 @@ export class SyncDatabase extends DatabaseObject {
   /**
    * 💾 Save the data from the database
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns the database itself, so you can chain operations
    *
    * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - 👩‍👦 the parent class
@@ -960,7 +960,7 @@ export class SyncDatabase extends DatabaseObject {
   /**
    * 🔄 Reload the data from the database
    *
-   * @author Nicolas Schmidt
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @returns the database itself, so you can chain operations
    *
    * @see [SyncDatabase](https://nsc-de.github.io/js-database/classes/_database_.syncdatabase.html) - 👩‍👦 the parent class
@@ -972,7 +972,7 @@ export class SyncDatabase extends DatabaseObject {
 /**
  * Creates a database from a given adapter
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param adapter the databaseAdapter
  * @returns ⌛ Promise (Ready when loaded) >> the database
  */
@@ -981,7 +981,7 @@ export function createDatabase(adapter: DatabaseAdapter): Promise<Database>;
 /**
  * Creates a sync-database from a given adapter
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param adapter the databaseAdapter
  * @returns the SyncDatabase
  */
@@ -990,7 +990,7 @@ export function createDatabase(adapter: SyncDatabaseAdapter): SyncDatabase;
 /**
  * Creates a database from a given adapter
  *
- * @author Nicolas Schmidt
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  * @param adapter the databaseAdapter
  * @returns the Database
  */
@@ -1024,7 +1024,26 @@ function isNumberString(s: string): boolean {
   return true;
 }
 
+
+/**
+ * A value as it is stored in the Database
+ * 
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+ */
 export type DatabaseValue = DatabaseObject | DatabaseArray | number | string | boolean | null | undefined;
+
+/**
+ * The Primitives of the [DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue)
+ * 
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+ */
 export type DatabaseValueAble = any[] | JSObject | number | string | boolean | null | undefined;
+
+/**
+ * Everything that can be inserted into a database ([DatabaseValue](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalue) 
+ * or [DatabaseValueAble](https://nsc-de.github.io/js-database/modules/_database_.html#databasevalueable))
+ * 
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+ */
 export type DatabaseInsertable = DatabaseValue | DatabaseValueAble;
 export interface JSObject {[key: string] : any};
