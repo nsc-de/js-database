@@ -4,6 +4,7 @@ Actual Version: [`0.1.3`](#0.1.3)
 
 ## 0.1.3
 
+_install using `npm i nscdb@0.1.3`_
 * Made package size much smaller
 
 ## 0.1.2
