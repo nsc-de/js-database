@@ -1,6 +1,10 @@
 # NSCDB Changelog
 
-Actual Version: [`0.1.2`](#0.1.2)
+Actual Version: [`0.1.3`](#0.1.3)
+
+## 0.1.3
+
+* Made package size much smaller
 
 ## 0.1.2
 _install using `npm i nscdb@0.1.2`_

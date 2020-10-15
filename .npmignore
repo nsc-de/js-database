@@ -9,6 +9,7 @@ tsconfig.types.json
 tsdoc.json
 
 # github
+CHANGELOG.md
 docs
 example
 images

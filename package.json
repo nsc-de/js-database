@@ -1,6 +1,6 @@
 {
   "name": "nscdb",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A lightweight package to manage json and other data storage formats",
   "main": "database.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "build:doc": "node_modules/.bin/typedoc --options tsdoc.json",
     "test": "npm run test:compile&mocha test/scripts/**/*.js",
     "test:compile": "npm run types&npm run test:compile:only",
-    "test:compile:only": "tsc --project tsconfig.testing.json"
+    "test:compile:only": "tsc --project tsconfig.testing.json",
+    "publish": "npm run build & npm publish"
   },
   "repository": {
     "type": "git",
