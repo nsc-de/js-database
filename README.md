@@ -31,7 +31,10 @@
 <br>
 <br>
 <br>
+
 ---
+
+<br>
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
