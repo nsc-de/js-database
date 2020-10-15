@@ -12,7 +12,7 @@
     "test": "npm run test:compile&mocha test/scripts/**/*.js",
     "test:compile": "npm run types&npm run test:compile:only",
     "test:compile:only": "tsc --project tsconfig.testing.json",
-    "publish": "npm run build & npm publish"
+    "doPublish": "npm run build & npm publish"
   },
   "repository": {
     "type": "git",
