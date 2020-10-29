@@ -15,6 +15,7 @@
   "files": [
     "src/json_adapter.ts",
     "src/yaml_adapter.ts",
+    "src/xml_adapter.ts",
     "src/database.ts"
   ],
   "exclude": [
