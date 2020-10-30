@@ -53,7 +53,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
   save(data: JSObject): Promise<void> {
     return new Promise((rs, rj) => 
       mkdirs(path.dirname(this.path)).then(() => 
-        fs.writeFile(this.path, xml.js2xml(data), err => {
+        fs.writeFile(this.path, xmlify(xml.js2xml(data, {compact: true})), err => {
           if(err) rj(err);
           else rs();
         })));
@@ -74,7 +74,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
         if(exists) {
           fs.readFile(this.path, (err, data) => {
             if(err) rj(err);
-            else rs(xml.xml2js(data.toString()));
+            else rs(simplify(xml.xml2js(data.toString(), {compact: true})));
           });
         }
         else rs({});
@@ -119,7 +119,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    */
   save(data: JSObject): void {
     mkdirsSync(path.dirname(this.path));
-    fs.writeFileSync(this.path, xml.js2xml(data));
+    fs.writeFileSync(this.path, xmlify(xml.js2xml(data, {compact: true})));
   }
 
 
@@ -132,7 +132,33 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html) - 👩‍👦 the parent class
    */
   load(): JSObject {
-    if(fs.existsSync(this.path)) return xml.xml2js(fs.readFileSync(this.path).toString());
+    if(fs.existsSync(this.path)) return simplify(xml.xml2js(fs.readFileSync(this.path).toString(), {compact: true}));
     return {};
   } 
+}
+
+function simplify(arg: any): any {
+  if(Array.isArray(arg)) return arg.map(e => simplify(arg));
+  if(typeof arg == "object") {
+    if(arg._text) return arg._text;
+    else {
+      const keys = Object.keys(arg);
+      for(let i = 0; i < keys.length; i++) 
+        arg[keys[i]] = simplify(arg[keys[i]]);
+      return arg;
+    }
+  }
+  return arg;
+}
+
+function xmlify(arg: any): any { return arg /*
+  if(Array.isArray(arg)) return arg.map(e => xmlify(arg));
+  if(typeof arg == "object") {
+    const keys = Object.keys(arg);
+    for(let i = 0; i < keys.length; i++) 
+      arg[keys[i]] = xmlify(arg[keys[i]]);
+    return arg;
+  }
+  if(typeof arg == "string") return {"_text": arg};
+  return arg;*/
 }

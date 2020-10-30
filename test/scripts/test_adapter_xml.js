@@ -9,6 +9,7 @@ const { XMLFileAdapter, SyncXMLFileAdapter } = require('nscdb/xml_adapter');
 let non_existing = path.join(__dirname, '../assets/not-existing.xml');
 let test_file = path.join(__dirname, '../assets/adapter_test.xml');
 let test_data = {testData: "test"};
+let test_data_result = {testData: {_text: "test"}};
 
 async function deleteNonExisting() {
   if(await fs.exists(non_existing)) await fs.remove(non_existing);
@@ -28,7 +29,7 @@ describe('XMLFileAdapter', () => {
       await adapter.save(test_data);
 
       assert.isTrue(await fs.exists(non_existing));
-      assert.deepEqual(xml.xml2js(await fs.readFile(non_existing)), test_data);
+      assert.deepEqual(xml.xml2js(await fs.readFile(non_existing), {compact: true}), test_data_result);
 
       await deleteNonExisting();
       
@@ -78,7 +79,7 @@ describe('AsyncXMLFileAdapter', () => {
       adapter.save(test_data);
 
       assert.isTrue(await fs.exists(non_existing));
-      assert.deepEqual(xml.xml2js(await fs.readFile(non_existing)), test_data);
+      assert.deepEqual(xml.xml2js(await fs.readFile(non_existing), {compact: true}), test_data_result);
 
       await deleteNonExisting();
       
