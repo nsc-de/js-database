@@ -2,6 +2,12 @@
 
 Actual Version: [`0.1.3`](#0.1.3)
 
+## 0.1.4
+
+_install using `npm i nscdb@0.1.4`_
+* Created xml-adapter
+
+
 ## 0.1.3
 
 _install using `npm i nscdb@0.1.3`_
