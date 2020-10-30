@@ -146,6 +146,126 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
   } 
 }
 
+
+
+
+
+/**
+ * The settings for [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
+ * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html):
+ *   beautify - should the generated xml be beautified (default: true)
+ *   beautify_space - the space to indent the xml with (default: 2)
+ * 
+ * This is the input version of the interface. It get's applied all default values when passed to a 
+ * [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
+ * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
+ * 
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+ * 
+ * @see [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html)
+ * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
+ */
+export interface XMLAdapterSettingsInput {
+  /**
+   * Should the generated xml be beautified?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  beautify?: boolean;
+
+  /**
+   * How many spaces should be used to indent the generated xml?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  beautify_space?: number;
+
+  /**
+   * Should empty tags be generated as `<element></element>` instead of `<element/>`?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  fullTagEmptyElement?: boolean;
+
+  /**
+   * Should attributes be splitted over multiple lines and indented when nessesarry?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  indentAttributes?: boolean;
+}
+
+
+
+
+
+/**
+ * The settings for [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
+ * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html):
+ *   beautify - should the generated xml be beautified (default: true)
+ *   beautify_space - the space to indent the xml with (default: 2)
+ * 
+ * This is the input version of the interface. It get's applied all default values when passed to a 
+ * [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
+ * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
+ * 
+ * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+ * 
+ * @see [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html)
+ * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
+ */
+export interface XMLAdapterSettings {
+  /**
+   * Should the generated xml be beautified?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  beautify: boolean;
+
+  /**
+   * How many spaces should be used to indent the generated xml?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  beautify_space: number;
+
+  /**
+   * Should empty tags be generated as `<element></element>` instead of `<element/>`?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  fullTagEmptyElement: boolean;
+
+  /**
+   * Should attributes be splitted over multiple lines and indented when nessesarry?
+   * 
+   * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
+   * 
+   * @see [XMLAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html) - 👩‍👦 the parent interface
+   */
+  indentAttributes: boolean;
+}
+
+
+// *************************************************
+// Intern functions (not exported)
+
+
+// Simplifies the results of parsed the xml
 function simplify(arg: any): any {
   if(Array.isArray(arg)) return arg.map(e => simplify(arg));
   if(typeof arg == "object") {
@@ -160,20 +280,7 @@ function simplify(arg: any): any {
   return arg;
 }
 
-export interface XMLAdapterSettingsInput {
-  beautify?: boolean;
-  beautify_space?: number;
-  fullTagEmptyElement?: boolean;
-  indentAttributes?: boolean;
-}
-
-export interface XMLAdapterSettings {
-  beautify: boolean;
-  beautify_space: number;
-  fullTagEmptyElement: boolean;
-  indentAttributes: boolean;
-}
-
+// Applies defaults to the xml adapter settings
 function applyDefaults(settings: XMLAdapterSettingsInput): XMLAdapterSettings {
   return {
     beautify: settings.beautify || true,
@@ -183,10 +290,12 @@ function applyDefaults(settings: XMLAdapterSettingsInput): XMLAdapterSettings {
   };
 }
 
+// Parses xml
 function parseXML(data: string): any {
   return simplify(xml.xml2js(data, {compact: true}));
 }
 
+// Generates xml using given settings
 function generateXML(data: any, settings: XMLAdapterSettings): string {
   const args: JSObject = {
     fullTagEmptyElement: settings.fullTagEmptyElement,
