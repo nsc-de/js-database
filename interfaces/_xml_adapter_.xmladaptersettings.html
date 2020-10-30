@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JsonAdapterSettings | nscdb</title>
+	<title>XMLAdapterSettings | nscdb</title>
 	<meta name="description" content="Documentation for nscdb">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,13 +53,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_json_adapter_.html">&quot;json_adapter&quot;</a>
+					<a href="../modules/_xml_adapter_.html">&quot;xml_adapter&quot;</a>
 				</li>
 				<li>
-					<a href="_json_adapter_.jsonadaptersettings.html">JsonAdapterSettings</a>
+					<a href="_xml_adapter_.xmladaptersettings.html">XMLAdapterSettings</a>
 				</li>
 			</ul>
-			<h1>Interface JsonAdapterSettings</h1>
+			<h1>Interface XMLAdapterSettings</h1>
 		</div>
 	</div>
 </header>
@@ -69,20 +69,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The settings for <a href="https://nsc-de.github.io/js-database/classes/_json_adapter_.jsonfileadapter.html">JsonFileAdapter</a> or
-							<a href="https://nsc-de.github.io/js-database/classes/_json_adapter_.syncjsonfileadapter.html">SyncJsonFileAdapter</a>:
-							beautify - should the generated json be beautified (default: false)
-						beautify_space - the space to indent the json with (default: 2)</p>
+						<p>The settings for <a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html">XMLFileAdapter</a> or
+							<a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html">SyncXMLFileAdapter</a>:
+							beautify - should the generated xml be beautified (default: true)
+						beautify_space - the space to indent the xml with (default: 2)</p>
 					</div>
+					<p>This is the input version of the interface. It get&#39;s applied all default values when passed to a
+						<a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html">XMLFileAdapter</a> or
+					<a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html">SyncXMLFileAdapter</a></p>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
 						<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
 						</dd>
 						<dt>see</dt>
-						<dd><p><a href="https://nsc-de.github.io/js-database/classes/_json_adapter_.jsonfileadapter.html">JsonFileAdapter</a></p>
+						<dd><p><a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html">XMLFileAdapter</a></p>
 						</dd>
 						<dt>see</dt>
-						<dd><p><a href="https://nsc-de.github.io/js-database/classes/_json_adapter_.syncjsonfileadapter.html">SyncJsonFileAdapter</a></p>
+						<dd><p><a href="https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html">SyncXMLFileAdapter</a></p>
 						</dd>
 					</dl>
 				</div>
@@ -91,7 +94,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JsonAdapterSettings</span>
+						<span class="target">XMLAdapterSettings</span>
 					</li>
 				</ul>
 			</section>
@@ -102,8 +105,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_json_adapter_.jsonadaptersettings.html#beautify" class="tsd-kind-icon">beautify</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_json_adapter_.jsonadaptersettings.html#beautify_space" class="tsd-kind-icon">beautify_<wbr>space</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_xml_adapter_.xmladaptersettings.html#beautify" class="tsd-kind-icon">beautify</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_xml_adapter_.xmladaptersettings.html#beautify_space" class="tsd-kind-icon">beautify_<wbr>space</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_xml_adapter_.xmladaptersettings.html#fulltagemptyelement" class="tsd-kind-icon">full<wbr>Tag<wbr>Empty<wbr>Element</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_xml_adapter_.xmladaptersettings.html#indentattributes" class="tsd-kind-icon">indent<wbr>Attributes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -114,22 +119,22 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="beautify" class="tsd-anchor"></a>
 					<h3>beautify</h3>
-					<div class="tsd-signature tsd-kind-icon">beautify<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span></div>
+					<div class="tsd-signature tsd-kind-icon">beautify<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/json_adapter.ts#L249">json_adapter.ts:249</a></li>
+							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/xml_adapter.ts#L233">xml_adapter.ts:233</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Should the generated json be beautified?</p>
+							<p>Should the generated xml be beautified?</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>author</dt>
 							<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
 							</dd>
 							<dt>see</dt>
-							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_database_.jsonadaptersettings.html">JsonAdapterSettings</a> - 👩‍👦 the parent interface</p>
+							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html">XMLAdapterSettingsInput</a> - 👩‍👦 the parent interface</p>
 							</dd>
 						</dl>
 					</div>
@@ -140,19 +145,65 @@
 					<div class="tsd-signature tsd-kind-icon">beautify_<wbr>space<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/json_adapter.ts#L258">json_adapter.ts:258</a></li>
+							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/xml_adapter.ts#L242">xml_adapter.ts:242</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>How many spaces should be used to indent the generated json</p>
+							<p>How many spaces should be used to indent the generated xml?</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>author</dt>
 							<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
 							</dd>
 							<dt>see</dt>
-							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_database_.jsonadaptersettings.html">JsonAdapterSettings</a> - 👩‍👦 the parent interface</p>
+							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html">XMLAdapterSettingsInput</a> - 👩‍👦 the parent interface</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="fulltagemptyelement" class="tsd-anchor"></a>
+					<h3>full<wbr>Tag<wbr>Empty<wbr>Element</h3>
+					<div class="tsd-signature tsd-kind-icon">full<wbr>Tag<wbr>Empty<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/xml_adapter.ts#L251">xml_adapter.ts:251</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should empty tags be generated as <code>&lt;element&gt;&lt;/element&gt;</code> instead of <code>&lt;element/&gt;</code>?</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>author</dt>
+							<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
+							</dd>
+							<dt>see</dt>
+							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html">XMLAdapterSettingsInput</a> - 👩‍👦 the parent interface</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="indentattributes" class="tsd-anchor"></a>
+					<h3>indent<wbr>Attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">indent<wbr>Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/5d5bb26/src/xml_adapter.ts#L260">xml_adapter.ts:260</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Should attributes be splitted over multiple lines and indented when nessesarry?</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>author</dt>
+							<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
+							</dd>
+							<dt>see</dt>
+							<dd><p><a href="https://nsc-de.github.io/js-database/interfaces/_xml_adapter_.xmladaptersettingsinput.html">XMLAdapterSettingsInput</a> - 👩‍👦 the parent interface</p>
 							</dd>
 						</dl>
 					</div>
@@ -168,10 +219,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_database_.html">&quot;database&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_json_adapter_.html">&quot;json_<wbr>adapter&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_xml_adapter_.html">&quot;xml_<wbr>adapter&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -182,28 +233,34 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_json_adapter_.jsonfileadapter.html" class="tsd-kind-icon">Json<wbr>File<wbr>Adapter</a>
+						<a href="../classes/_xml_adapter_.syncxmlfileadapter.html" class="tsd-kind-icon">SyncXMLFile<wbr>Adapter</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_json_adapter_.syncjsonfileadapter.html" class="tsd-kind-icon">Sync<wbr>Json<wbr>File<wbr>Adapter</a>
+						<a href="../classes/_xml_adapter_.xmlfileadapter.html" class="tsd-kind-icon">XMLFile<wbr>Adapter</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_json_adapter_.jsonadaptersettings.html" class="tsd-kind-icon">Json<wbr>Adapter<wbr>Settings</a>
+						<a href="_xml_adapter_.xmladaptersettings.html" class="tsd-kind-icon">XMLAdapter<wbr>Settings</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_json_adapter_.jsonadaptersettings.html#beautify" class="tsd-kind-icon">beautify</a>
+								<a href="_xml_adapter_.xmladaptersettings.html#beautify" class="tsd-kind-icon">beautify</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_json_adapter_.jsonadaptersettings.html#beautify_space" class="tsd-kind-icon">beautify_<wbr>space</a>
+								<a href="_xml_adapter_.xmladaptersettings.html#beautify_space" class="tsd-kind-icon">beautify_<wbr>space</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_xml_adapter_.xmladaptersettings.html#fulltagemptyelement" class="tsd-kind-icon">full<wbr>Tag<wbr>Empty<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_xml_adapter_.xmladaptersettings.html#indentattributes" class="tsd-kind-icon">indent<wbr>Attributes</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_json_adapter_.jsonadaptersettingsinput.html" class="tsd-kind-icon">Json<wbr>Adapter<wbr>Settings<wbr>Input</a>
+						<a href="_xml_adapter_.xmladaptersettingsinput.html" class="tsd-kind-icon">XMLAdapter<wbr>Settings<wbr>Input</a>
 					</li>
 				</ul>
 			</nav>
