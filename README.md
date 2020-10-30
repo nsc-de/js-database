@@ -39,8 +39,6 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
   * [Dependencies](#dependencies)
-    * [Optional Dependencys](#optional-dependencies)
-    * [Development Dependencys](#development-dependencies)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
