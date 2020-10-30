@@ -1,6 +1,7 @@
 // TODO Rearange XML to match the normal style
 import * as fs from 'fs';
 import * as path from 'path';
+import { parse } from 'path';
 
 import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
@@ -26,6 +27,7 @@ try {
  * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  */
 export class XMLFileAdapter implements DatabaseAdapter {
+  settings: XMLAdapterSettings;
 
 
   /**
@@ -37,8 +39,11 @@ export class XMLFileAdapter implements DatabaseAdapter {
    * @see [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) - 👩‍👦 the parent class
    */
   constructor(
-    readonly path: string
-  ) {}
+    readonly path: string,
+    settings: XMLAdapterSettingsInput = {},
+  ) {
+    this.settings = applyDefaults(settings);
+  }
 
 
   /**
@@ -53,7 +58,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
   save(data: JSObject): Promise<void> {
     return new Promise((rs, rj) => 
       mkdirs(path.dirname(this.path)).then(() => 
-        fs.writeFile(this.path, xmlify(xml.js2xml(data, {compact: true})), err => {
+        fs.writeFile(this.path, generateXML(data, this.settings), err => {
           if(err) rj(err);
           else rs();
         })));
@@ -74,7 +79,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
         if(exists) {
           fs.readFile(this.path, (err, data) => {
             if(err) rj(err);
-            else rs(simplify(xml.xml2js(data.toString(), {compact: true})));
+            else rs(parseXML(data.toString()));
           });
         }
         else rs({});
@@ -93,6 +98,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
  * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  */
 export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
+  settings: XMLAdapterSettings;
 
 
   /**
@@ -104,8 +110,11 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html) - 👩‍👦 the parent class
    */
   constructor(
-    readonly path: string
-  ) {}
+    readonly path: string,
+    settings: XMLAdapterSettingsInput = {},
+  ) {
+    this.settings = applyDefaults(settings);
+  }
 
 
   /**
@@ -119,7 +128,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    */
   save(data: JSObject): void {
     mkdirsSync(path.dirname(this.path));
-    fs.writeFileSync(this.path, xmlify(xml.js2xml(data, {compact: true})));
+    fs.writeFileSync(this.path, generateXML(data, this.settings));
   }
 
 
@@ -132,7 +141,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html) - 👩‍👦 the parent class
    */
   load(): JSObject {
-    if(fs.existsSync(this.path)) return simplify(xml.xml2js(fs.readFileSync(this.path).toString(), {compact: true}));
+    if(fs.existsSync(this.path)) return parseXML(fs.readFileSync(this.path).toString());
     return {};
   } 
 }
@@ -151,14 +160,39 @@ function simplify(arg: any): any {
   return arg;
 }
 
-function xmlify(arg: any): any { return arg /*
-  if(Array.isArray(arg)) return arg.map(e => xmlify(arg));
-  if(typeof arg == "object") {
-    const keys = Object.keys(arg);
-    for(let i = 0; i < keys.length; i++) 
-      arg[keys[i]] = xmlify(arg[keys[i]]);
-    return arg;
-  }
-  if(typeof arg == "string") return {"_text": arg};
-  return arg;*/
+export interface XMLAdapterSettingsInput {
+  beautify?: boolean;
+  beautify_space?: number;
+  fullTagEmptyElement?: boolean;
+  indentAttributes?: boolean;
+}
+
+export interface XMLAdapterSettings {
+  beautify: boolean;
+  beautify_space: number;
+  fullTagEmptyElement: boolean;
+  indentAttributes: boolean;
+}
+
+function applyDefaults(settings: XMLAdapterSettingsInput): XMLAdapterSettings {
+  return {
+    beautify: settings.beautify || true,
+    beautify_space: settings.beautify_space || 2,
+    fullTagEmptyElement: settings.fullTagEmptyElement || false,
+    indentAttributes: settings.indentAttributes || false
+  };
+}
+
+function parseXML(data: string): any {
+  return simplify(xml.xml2js(data, {compact: true}));
+}
+
+function generateXML(data: any, settings: XMLAdapterSettings): string {
+  const args: JSObject = {
+    fullTagEmptyElement: settings.fullTagEmptyElement,
+    indentAttributes: settings.indentAttributes,
+    compact: true,
+  };
+  args.space = settings.beautify ? settings.beautify_space : 0;
+  return xml.js2xml(data, args);
 }
