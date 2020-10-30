@@ -77,7 +77,7 @@ To get the package up and running follow these simple steps.
 
 ### Prerequisites
 
-You should have npm to install this package
+You should have already installed npm to install this package
 
 * npm
 ```sh
@@ -173,7 +173,7 @@ let database = await createDatabase(new JsonFileAdapter("./database.json"));
 ```
 
 ### Synchronous Usage
-_**Warning:** Using synchronus versions of some adapters may slow down you application._
+_**Warning:** Using synchronous versions of some adapters may slow down your application._
 
 First of all use the synchronous adapters of the adapter
 <br><br>
@@ -187,7 +187,7 @@ Javascript
 const { createDatabase } = require('nscdb');
 const { SyncJsonFileAdapter } = require('nscdb/json_adapter');
 ```
-Now you can use the normal quickstart, but no await is needed anymore
+Now you can use the normal quickstart again, but no await instruction is needed anymore
 ```js
 let database = createDatabase(new JsonFileAdapter("./database.json"));
 
@@ -240,10 +240,10 @@ See the [open issues](https://github.com/nsc-de/js-database/issues) for a list o
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Create your own Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. [Open a Pull Request](https://github.com/nsc-de/js-database/compare)
