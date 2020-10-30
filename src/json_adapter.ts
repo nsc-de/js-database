@@ -212,7 +212,7 @@ export interface JsonAdapterSettingsInput {
    * 
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * 
-   * @see [JsonAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_database_.jsonadaptersettingsinput.html) - 👩‍👦 the parent interface
+   * @see [JsonAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_json_adapter_.jsonadaptersettingsinput.html) - 👩‍👦 the parent interface
    */
   beautify?: false,
 
@@ -221,7 +221,7 @@ export interface JsonAdapterSettingsInput {
    * 
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * 
-   * @see [JsonAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_database_.jsonadaptersettingsinput.html) - 👩‍👦 the parent interface
+   * @see [JsonAdapterSettingsInput](https://nsc-de.github.io/js-database/interfaces/_json_adapter_.jsonadaptersettingsinput.html) - 👩‍👦 the parent interface
    */
   beautify_space?: number
 }
