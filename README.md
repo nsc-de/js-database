@@ -66,18 +66,10 @@
 ### Dependencies
 
 #### Optional Dependencies
-* [js-yaml](https://www.npmjs.com/package/js-yaml)@^[3.14.0](https://www.npmjs.com/package/js-yaml/v/3.14.0) - the package has an integrated adaptor for yaml using this package (install if you want to use yaml)
+* [js-yaml](https://www.npmjs.com/package/js-yaml)@^[3.14.0](https://www.npmjs.com/package/js-yaml/v/3.14.0) - the package has an integrated adaptor for yaml using js-yaml (install if you want to use yaml)
+* [xml-js](https://www.npmjs.com/package/xml-js)@^[1.6.11](https://www.npmjs.com/package/xml-js/v/1.6.11) - the package has an integrated adaptor for  xml using xml-js (install if you want to use xml)
 
-#### Development Dependencies
-* [@types/js-yaml](https://www.npmjs.com/package/@types/js-yaml)@^[3.12.5](https://www.npmjs.com/package/@types/js-yaml/v/3.12.5) - typings for js-yaml
-* [@types/node](https://www.npmjs.com/package/@types/node)@^[14.10.1](https://www.npmjs.com/package/@types/node/v/14.10.1) - typings for node
-* [chai](https://www.npmjs.com/package/chai)@^[4.2.0](https://www.npmjs.com/package/chai/v/4.2.0) - assertions for tests
-* [mocha](https://www.npmjs.com/package/mocha)@^[8.1.3](https://www.npmjs.com/package/mocha/v/8.1.3) - all tests are written using mocha
-* [source-map-support](https://www.npmjs.com/package/source-map-support)@^[0.5.19](https://www.npmjs.com/package/source-map-support/v/0.5.19) - show errors in typescipt
-* [typescript](https://www.npmjs.com/package/typescript)@^[4.0.3](https://www.npmjs.com/package/typescript/v/4.0.3) - the typescript compiler
-* [typedoc](https://www.npmjs.com/package/typedoc)@^[0.19.2](https://www.npmjs.com/package/typedoc/v/0.19.2) - for documenting typescript files
-* [typedoc-plugin-extras](https://www.npmjs.com/package/typedoc-plugin-extras)@^[^1.1.6](https://www.npmjs.com/package/typedoc-plugin-extras/v/1.1.6) - a typedoc plugin to add a favicon to the docs
-
+[[See all dependencies]](https://github.com/nsc-de/js-database/wiki/Dependencies)
 
 
 <!-- GETTING STARTED -->
