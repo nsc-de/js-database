@@ -1,7 +1,7 @@
 // jshint esversion: 8
 
 const { assert } = require('chai');
-const db = require('nscdb');
+const db = require('../../');
 
 const dummyAdapter = { load: () => { return {}; }, save: () => {} };
 

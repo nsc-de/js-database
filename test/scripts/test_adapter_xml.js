@@ -4,7 +4,7 @@ const { assert } = require('chai');
 const fs = require('fs-extra');
 const path = require('path');
 const xml = require('xml-js');
-const { XMLFileAdapter, SyncXMLFileAdapter } = require('nscdb/xml_adapter');
+const { XMLFileAdapter, SyncXMLFileAdapter } = require('../..//xml_adapter');
 
 let non_existing = path.join(__dirname, '../assets/not-existing.xml');
 let test_file = path.join(__dirname, '../assets/adapter_test.xml');
