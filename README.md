@@ -1,3 +1,4 @@
+[![Build status][build-shield]][build-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -229,6 +230,7 @@ by
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[build-shield]: https://ci.appveyor.com/api/projects/status/rkx0p7mj9gfi8988/branch/master?svg=true
 [contributors-shield]: https://img.shields.io/github/contributors/nsc-de/js-database.svg
 [forks-shield]: https://img.shields.io/github/forks/nsc-de/js-database.svg
 [stars-shield]: https://img.shields.io/github/stars/nsc-de/js-database.svg
@@ -238,6 +240,7 @@ by
 [downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
 [vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.4/badge.svg
 
+[build-url]: https://ci.appveyor.com/project/nsc-de/js-database/branch/master
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
 [forks-url]: https://github.com/nsc-de/js-database/network/members
 [stars-url]: https://github.com/nsc-de/js-database/stargazers
