@@ -1,7 +1,7 @@
-let { createDatabase } = require ('nscdb');
-let { XMLFileAdapter } = require ('nscdb/xml_adapter');
+var { createDatabase } = require ('nscdb');
+var { XMLFileAdapter } = require ('nscdb/xml_adapter');
 
-let database = createDatabase(new XMLFileAdapter("./database.xml"));
+var database = createDatabase(new XMLFileAdapter("./database.xml"));
 
 // Set defaults
 database.setDefaults({
@@ -9,7 +9,7 @@ database.setDefaults({
 });
 
 // Push a value into the Database
-let users = database.get("users");
+var users = database.get("users");
 users.push({
   id: database.generateId("users"),
   name: 'Harleen Dolan',
