@@ -1,10 +1,10 @@
 {
   "name": "nscdb-tests",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "tests for nscdb",
   "main": "",
   "scripts": {
-    "test": "cd .. & npm test & cd test"
+    "test": "echo Calling test from main package & cd .. & npm test & cd test"
   },
   "repository": {
     "type": "git",
