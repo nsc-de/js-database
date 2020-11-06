@@ -10,6 +10,7 @@ tsdoc.json
 database.json
 
 # github
+appveyor.yml
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
