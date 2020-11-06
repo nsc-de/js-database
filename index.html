@@ -96,11 +96,7 @@
 				<ul>
 					<li><a href="#about-the-project">About the Project</a><ul>
 							<li><a href="#built-with">Built With</a></li>
-							<li><a href="#dependencies">Dependencies</a><ul>
-									<li><a href="#optional-dependencies">Optional Dependencys</a></li>
-									<li><a href="#development-dependencies">Development Dependencys</a></li>
-								</ul>
-							</li>
+							<li><a href="#dependencies">Dependencies</a></li>
 						</ul>
 					</li>
 					<li><a href="#getting-started">Getting Started</a><ul>
@@ -110,8 +106,6 @@
 					</li>
 					<li><a href="#usage">Usage</a><ul>
 							<li><a href="#basic-usage">Basic Usage</a></li>
-							<li><a href="#use-yaml">Use Yaml</a></li>
-							<li><a href="#synchronous-usage">Synchronous Usage</a></li>
 						</ul>
 					</li>
 					<li><a href="#roadmap">Roadmap</a></li>
@@ -149,7 +143,7 @@
 				<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
 					<h3>Prerequisites</h3>
 				</a>
-				<p>You should have npm to install this package</p>
+				<p>You should have already installed npm to install this package</p>
 				<ul>
 					<li>npm<pre><code class="language-sh">npm install npm@latest -g</code></pre>
 					</li>
@@ -157,10 +151,26 @@
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h3>Installation</h3>
 				</a>
-				<ol>
-					<li>Install the package<pre><code class="language-sh">npm i nscdb</code></pre>
-					</li>
-				</ol>
+				<a href="#1-install-the-package" id="1-install-the-package" style="color: inherit; text-decoration: none;">
+					<h4>1. Install the package<br/></h4>
+				</a>
+				<p>[using npm]</p>
+				<pre><code class="language-sh">npm i nscdb</code></pre>
+				<p>[using yarn]</p>
+				<pre><code class="language-sh">yarn add nscdb</code></pre>
+				<a href="#2-optional-install-optional-dependencies" id="2-optional-install-optional-dependencies" style="color: inherit; text-decoration: none;">
+					<h4>2. (Optional) install optional dependencies</h4>
+				</a>
+				<p><code>js-yaml</code> (for using yaml files)<br/>
+				[using npm]</p>
+				<pre><code class="language-sh">npm i js-yaml</code></pre>
+				<p>[using yarn]</p>
+				<pre><code class="language-sh">yarn add js-yaml</code></pre>
+				<p><code>xml-js</code> (for using xml files)<br/>
+				[using npm]</p>
+				<pre><code class="language-sh">npm i xml-js</code></pre>
+				<p>[using yarn]</p>
+				<pre><code class="language-sh">yarn add xml-js</code></pre>
 				<!-- USAGE EXAMPLES -->
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
@@ -210,67 +220,7 @@ users.push({
 
 <span class="hljs-comment">// Save the Database</span>
 <span class="hljs-keyword">await</span> database.saveData();</code></pre>
-				<a href="#use-yaml" id="use-yaml" style="color: inherit; text-decoration: none;">
-					<h3>Use Yaml</h3>
-				</a>
-				<p>If you want to use yaml instead, replace the json adapter with a yaml adapter and install <code>js-yaml</code> api
-					<br><br>
-				install <code>js-yaml</code> using npm</p>
-				<pre><code class="language-sh">npm i js-yaml</code></pre>
-				<p>Import using Typescript</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { YamlFileAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb/yaml_adapter&#x27;</span>;</code></pre>
-				<p>Import using Javascript</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { YamlFileAdapter } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb/yaml_adapter&#x27;</span>);</code></pre>
-				<p>Database creation</p>
-				<pre><code class="language-js"><span class="hljs-keyword">let</span> database = <span class="hljs-keyword">await</span> createDatabase(<span class="hljs-keyword">new</span> JsonFileAdapter(<span class="hljs-string">&quot;./database.json&quot;</span>));</code></pre>
-				<a href="#synchronous-usage" id="synchronous-usage" style="color: inherit; text-decoration: none;">
-					<h3>Synchronous Usage</h3>
-				</a>
-				<p><em><strong>Warning:</strong> Using synchronus versions of some adapters may slow down you application.</em></p>
-				<p>First of all use the synchronous adapters of the adapter
-					<br><br>
-				Typescript</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { createDatabase } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb&#x27;</span>;
-<span class="hljs-keyword">import</span> { SyncJsonFileAdapter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>;</code></pre>
-				<p>Javascript</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { createDatabase } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb&#x27;</span>);
-<span class="hljs-keyword">const</span> { SyncJsonFileAdapter } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;nscdb/json_adapter&#x27;</span>);</code></pre>
-				<p>Now you can use the normal quickstart, but no await is needed anymore</p>
-				<pre><code class="language-js"><span class="hljs-keyword">let</span> database = createDatabase(<span class="hljs-keyword">new</span> JsonFileAdapter(<span class="hljs-string">&quot;./database.json&quot;</span>));
-
-<span class="hljs-comment">// Set defaults</span>
-database.setDefaults({
-  <span class="hljs-attr">users</span>: []
-});
-
-<span class="hljs-comment">// Push a value into the Database</span>
-<span class="hljs-keyword">let</span> users = database.get(<span class="hljs-string">&quot;users&quot;</span>);
-users.push({
-  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
-  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Harleen Dolan&#x27;</span>,
-  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;a password&#x27;</span>
-});
-
-users.push({
-  <span class="hljs-attr">id</span>: database.generateId(<span class="hljs-string">&quot;users&quot;</span>),
-  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Lisa Bradley&#x27;</span>,
-  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;another password&#x27;</span>
-});
-
-<span class="hljs-comment">// print output data from the database</span>
-<span class="hljs-built_in">console</span>.log(database.data);
-
-<span class="hljs-comment">// Console Output:</span>
-<span class="hljs-comment">// &gt;&gt; {</span>
-<span class="hljs-comment">// &gt;&gt;   users: [</span>
-<span class="hljs-comment">// &gt;&gt;     { id: 0, name: &#x27;Harleen Dolan&#x27;, password: &#x27;a password&#x27; },</span>
-<span class="hljs-comment">// &gt;&gt;     { id: 1, name: &#x27;Lisa Bradley&#x27;, password: &#x27;another password&#x27; }</span>
-<span class="hljs-comment">// &gt;&gt;   ],</span>
-<span class="hljs-comment">// &gt;&gt;   id_counters: { users: 1 }</span>
-<span class="hljs-comment">// &gt;&gt; }</span>
-
-<span class="hljs-comment">// Save the Database</span>
-database.saveData();</code></pre>
+				<p>⇒ <a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart#continue-after-quickstart">Continue after Quickstart</a> ⇐</p>
 				<p><em>For more examples, please refer to the <a href="https://github.com/nsc-de/js-database/wiki">Documentation</a></em></p>
 				<!-- ROADMAP -->
 				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
@@ -281,10 +231,10 @@ database.saveData();</code></pre>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
 					<h2>Contributing</h2>
 				</a>
-				<p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
+				<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.</p>
 				<ol>
 					<li>Fork the Project</li>
-					<li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+					<li>Create your own Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
 					<li>Commit your Changes (<code>git commit -m &#39;Add some AmazingFeature&#39;</code>)</li>
 					<li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
 					<li><a href="https://github.com/nsc-de/js-database/compare">Open a Pull Request</a></li>
@@ -301,7 +251,14 @@ database.saveData();</code></pre>
 				<p>Project Link: <a href="https://github.com/nsc-de/js-database">https://github.com/nsc-de/js-database</a></p>
 				<hr>
 				<p align="right">
-					<a href="https://github.com/nsc-de/js-database">js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a> | <a href="https://github.com/nsc-de/js-database">GitHub</a> | <a href="https://www.npmjs.com/package/nscdb">NPM</a>
+					<a href="https://github.com/nsc-de/js-database">js-database</a>
+					by
+					<a href="https://github.com/nsc-de">Nicolas Schmidt</a>
+					| License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a>
+					| <a href="https://github.com/nsc-de/js-database/wiki">read the wiki</a>
+					| <a href="https://nsc-de.github.io/js-database/">explore the typedoc</a>
+					| <a href="https://github.com/nsc-de/js-database">GitHub</a>
+					| <a href="https://www.npmjs.com/package/nscdb">NPM</a>
 				</p>
 				<!-- MARKDOWN LINKS & IMAGES -->
 			</div>

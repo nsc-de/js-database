@@ -20,7 +20,7 @@
     ·
     <a href="https://github.com/nsc-de/js-database/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
   </p>
-  
+
 </p>
 
 <p>
@@ -35,7 +35,6 @@
 ---
 
 <br>
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -82,8 +81,6 @@
   * [Installation](#installation)
 * [Usage](#usage)
   * [Basic Usage](#basic-usage)
-  * [Use Yaml](#use-yaml)
-  * [Synchronous Usage](#synchronous-usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -115,7 +112,7 @@ To get the package up and running follow these simple steps.
 
 ### Prerequisites
 
-You should have npm to install this package
+You should have already installed npm to install this package
 
 * npm
 ```sh
@@ -124,11 +121,36 @@ npm install npm@latest -g
 
 ### Installation
 
-1. Install the package
+#### 1. Install the package<br/>
+[using npm]
 ```sh
 npm i nscdb
 ```
+[using yarn]
+```sh
+yarn add nscdb
+```
 
+#### 2. (Optional) install optional dependencies
+`js-yaml` (for using yaml files)<br/>
+[using npm]
+```sh
+npm i js-yaml
+```
+[using yarn]
+```sh
+yarn add js-yaml
+```
+
+`xml-js` (for using xml files)<br/>
+[using npm]
+```sh
+npm i xml-js
+```
+[using yarn]
+```sh
+yarn add xml-js
+```
 
 
 <!-- USAGE EXAMPLES -->
@@ -189,80 +211,7 @@ console.log(database.data);
 await database.saveData();
 ```
 
-### Use Yaml
-
-If you want to use yaml instead, replace the json adapter with a yaml adapter and install `js-yaml` api
-<br><br>
-install `js-yaml` using npm
-```sh
-npm i js-yaml
-```
-Import using Typescript
-```ts
-import { YamlFileAdapter } from 'nscdb/yaml_adapter';
-```
-Import using Javascript
-```js
-const { YamlFileAdapter } = require('nscdb/yaml_adapter');
-```
-Database creation
-```js
-let database = await createDatabase(new JsonFileAdapter("./database.json"));
-```
-
-### Synchronous Usage
-_**Warning:** Using synchronus versions of some adapters may slow down you application._
-
-First of all use the synchronous adapters of the adapter
-<br><br>
-Typescript
-```ts
-import { createDatabase } from 'nscdb';
-import { SyncJsonFileAdapter } from 'nscdb/json_adapter';
-```
-Javascript
-```js
-const { createDatabase } = require('nscdb');
-const { SyncJsonFileAdapter } = require('nscdb/json_adapter');
-```
-Now you can use the normal quickstart, but no await is needed anymore
-```js
-let database = createDatabase(new JsonFileAdapter("./database.json"));
-
-// Set defaults
-database.setDefaults({
-  users: []
-});
-
-// Push a value into the Database
-let users = database.get("users");
-users.push({
-  id: database.generateId("users"),
-  name: 'Harleen Dolan',
-  password: 'a password'
-});
-
-users.push({
-  id: database.generateId("users"),
-  name: 'Lisa Bradley',
-  password: 'another password'
-});
-
-// print output data from the database
-console.log(database.data);
-
-// Console Output:
-// >> {
-// >>   users: [
-// >>     { id: 0, name: 'Harleen Dolan', password: 'a password' },
-// >>     { id: 1, name: 'Lisa Bradley', password: 'another password' }
-// >>   ],
-// >>   id_counters: { users: 1 }
-// >> }
-
-// Save the Database
-database.saveData();
-```
+⇒ [Continue after Quickstart](https://github.com/nsc-de/js-database/wiki/Node-Quickstart#continue-after-quickstart) ⇐
 
 _For more examples, please refer to the [Documentation](https://github.com/nsc-de/js-database/wiki)_
 
@@ -278,10 +227,10 @@ See the [open issues](https://github.com/nsc-de/js-database/issues) for a list o
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Create your own Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. [Open a Pull Request](https://github.com/nsc-de/js-database/compare)
@@ -302,7 +251,14 @@ Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/
 
 ---
 <p align="right">
-<a href="https://github.com/nsc-de/js-database">js-database</a> by <a href="https://github.com/nsc-de">Nicolas Schmidt</a> | License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> | <a href="https://github.com/nsc-de/js-database/wiki">read the docs</a> | <a href="https://github.com/nsc-de/js-database">GitHub</a> | <a href="https://www.npmjs.com/package/nscdb">NPM</a>
+<a href="https://github.com/nsc-de/js-database">js-database</a>
+by
+<a href="https://github.com/nsc-de">Nicolas Schmidt</a>
+| License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a>
+| <a href="https://github.com/nsc-de/js-database/wiki">read the wiki</a>
+| <a href="https://nsc-de.github.io/js-database/">explore the typedoc</a>
+| <a href="https://github.com/nsc-de/js-database">GitHub</a>
+| <a href="https://www.npmjs.com/package/nscdb">NPM</a>
 </p>
 
 
