@@ -12,8 +12,8 @@
     "test": "npm run test:compile&mocha test/scripts/**/*.js",
     "test:compile": "npm run types&npm run test:compile:only",
     "test:compile:only": "tsc --project tsconfig.testing.json",
-    "workspace:publish": "npm run build & npm publish",
-    "workspace:setup": "npm i&cd example&npm i&cd../test&npm i&cd .."
+    "workspace:setup": "npm i&cd example&npm i&cd../test&npm i&cd ..",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
