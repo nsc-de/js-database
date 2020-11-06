@@ -1,7 +1,7 @@
-let { createDatabase } = require ('nscdb');
-let { SyncYamlFileAdapter } = require ('nscdb/yaml_adapter');
+var { createDatabase } = require ('nscdb');
+var { SyncYamlFileAdapter } = require ('nscdb/yaml_adapter');
 
-let database = createDatabase(new SyncYamlFileAdapter("./database.yml"));
+var database = createDatabase(new SyncYamlFileAdapter("./database.yml"));
 
 // Set defaults
 database.setDefaults({
@@ -9,7 +9,7 @@ database.setDefaults({
 });
 
 // Push a value into the Database
-let users = database.get("users");
+var users = database.get("users");
 users.push({
   id: database.generateId("users"),
   name: 'Harleen Dolan',

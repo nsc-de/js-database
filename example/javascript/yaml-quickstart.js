@@ -1,9 +1,9 @@
-let { createDatabase } = require('nscdb');
-let { YamlFileAdapter } = require('nscdb/yaml_adapter');
+var { createDatabase } = require('nscdb');
+var { YamlFileAdapter } = require('nscdb/yaml_adapter');
 
 async function myFunction() {
 
-  let database = await createDatabase(new YamlFileAdapter("./database.yml"));
+  var database = await createDatabase(new YamlFileAdapter("./database.yml"));
 
   // Set defaults
   database.setDefaults({
@@ -11,7 +11,7 @@ async function myFunction() {
   });
 
   // Push a value into the Database
-  let users = database.get("users");
+  var users = database.get("users");
   users.push({
     id: database.generateId("users"),
     name: 'Harleen Dolan',
