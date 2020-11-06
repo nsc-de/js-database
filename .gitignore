@@ -8,6 +8,9 @@ docs
 *.js
 *.map
 
+# generated
+database.json
+
 # include tests and examples
 !test/**/*.js
 !example/**/*.js
