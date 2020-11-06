@@ -23,6 +23,7 @@
   "homepage": "https://github.com/nsc-de/js-database#readme",
   "dependencies": {
     "js-yaml": "^3.14.0",
+    "xml-js": "^1.6.11",
     "nscdb": "file:.."
   }
 }
