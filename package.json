@@ -1,6 +1,6 @@
 {
   "name": "nscdb",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "A lightweight package to manage json and other data storage formats",
   "main": "database.js",
   "scripts": {

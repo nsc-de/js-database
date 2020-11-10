@@ -238,7 +238,7 @@ by
 [license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
 [version-shield]: https://img.shields.io/npm/v/nscdb.svg
 [downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
-[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.4/badge.svg
+[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.2.0/badge.svg
 
 [build-url]: https://ci.appveyor.com/project/nsc-de/js-database/branch/master
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
@@ -247,4 +247,4 @@ by
 [issues-url]: https://github.com/nsc-de/js-database/issues
 [license-url]: https://github.com/nsc-de/js-database/blob/master/LICENSE
 [npm-url]: https://www.npmjs.com/package/nscdb
-[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.4
+[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.2.0

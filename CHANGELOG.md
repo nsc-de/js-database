@@ -1,6 +1,9 @@
 # NSCDB Changelog
 
-Actual Version: [`0.1.4`](#0.1.4)
+Actual Version: [`0.2.0`](#0.2.0)
+
+## 0.2.0
+
 
 ## 0.1.4
 
