@@ -1,4 +1,4 @@
-import { DatabaseArray, DatabaseArrayType, DatabaseInsertable, DatabaseObjectType, DatabaseValue, DatabaseValueAble, JSObject } from './database';
+import { DatabaseArray, DatabaseArrayType, DatabaseInsertable, DatabaseObject, DatabaseObjectType, DatabaseValue, DatabaseValueAble, JSObject } from './database';
 
 
 /**
@@ -258,13 +258,13 @@ export interface DatabaseArrayProxy {
 
 
 
-export function createProxy(obj : DatabaseObjectType) : DatabaseObjectProxy;
-export function createProxy(obj : DatabaseArrayType) : DatabaseArrayProxy;
-export function createProxy(obj : any) : any;
-export function createProxy(obj : DatabaseObjectType | DatabaseArrayType | any) : DatabaseObjectProxy | DatabaseArrayProxy | any {
+export function createProxy(obj : DatabaseObject) : DatabaseObjectProxy;
+export function createProxy(obj : DatabaseArray) : DatabaseArrayProxy;
+export function createProxy<T extends any>(obj : T) : T;
+export function createProxy(obj : DatabaseObject | DatabaseArray | any) : DatabaseObjectProxy | DatabaseArrayProxy | any {
 
-  if(typeof obj != "object") return obj;
-  if(Array.isArray(obj.data)) return <DatabaseArrayProxy> new Proxy(obj, DatabaseArrayProxyHandler);
+  if(typeof obj != "object" || (!(obj instanceof DatabaseArray || obj instanceof DatabaseObject))) return obj;
+  if(obj instanceof DatabaseArray) return <DatabaseArrayProxy> new Proxy(obj, DatabaseArrayProxyHandler);
   else return <DatabaseObjectProxy> new Proxy(obj, DatabaseObjectProxyHandler);
 
 }
