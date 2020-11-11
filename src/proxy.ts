@@ -275,15 +275,17 @@ export function createProxy(obj : DatabaseObjectType | DatabaseArrayType | any) 
 
 export const DatabaseObjectProxyHandler : ProxyHandler<DatabaseObjectType> = {
 
-  get(target, path: string) {
+  get(target: DatabaseObjectType, path: string) {
 
+    // @ts-ignore
     if(target[path]) return target[path];
     if(target.contains(path)) return createProxy(target.get(path));
 
   },
 
-  set(target, path : string, value) {
+  set(target: DatabaseObjectType, path : string, value) {
 
+    // @ts-ignore
     if(target[path]) throw new Error("Can't set this property");
     target.set(path, value);
     return true;
@@ -298,15 +300,17 @@ export const DatabaseObjectProxyHandler : ProxyHandler<DatabaseObjectType> = {
 
 export const DatabaseArrayProxyHandler : ProxyHandler<DatabaseArrayType> = {
 
-  get(target, path: number) {
+  get(target: DatabaseArrayType, path: number) {
 
+    // @ts-ignore
     if(target[path]) return target[path];
     if(target.contains(path)) return createProxy(target.get(path));
 
   },
 
-  set(target, path: number, value) {
+  set(target: DatabaseArrayType, path: number, value) {
 
+    // @ts-ignore
     if(target[path]) throw new Error("Can't set this property");
     target.set(path, value);
     return true;
