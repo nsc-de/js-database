@@ -1,19 +1,26 @@
 # NSCDB Changelog
 
-Actual Version: [`0.1.4`](#0.1.4)
+Actual Version: [`0.1.5`](#0.1.5)
 
-## 0.1.4
+## 0.1.x
+
+
+### 0.1.5
+...
+
+
+### 0.1.4
 
 _install using `npm i nscdb@0.1.4`_
 * Created xml-adapter
 
 
-## 0.1.3
+### 0.1.3
 
 _install using `npm i nscdb@0.1.3`_
 * Made package size much smaller
 
-## 0.1.2
+### 0.1.2
 _install using `npm i nscdb@0.1.2`_
 
 * Improved documentation
@@ -30,7 +37,7 @@ _install using `npm i nscdb@0.1.2`_
 * removed unnessesary debug log that was printed to the console
 
 
-## 0.1.1
+### 0.1.1
 _install using `npm i nscdb@0.1.1`_
 
 * implemented most parts of basic api (+ documentation)
