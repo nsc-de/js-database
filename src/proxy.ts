@@ -251,7 +251,7 @@ export interface DatabaseArrayProxy {
    */
   push(...values: DatabaseInsertable[]): this;
 
-  [key: number]:  DatabaseProxyValue | Function | DatabaseValue[];
+  [key: number]:  DatabaseProxyValue;
 }
 
 
