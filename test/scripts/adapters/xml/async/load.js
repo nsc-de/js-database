@@ -15,6 +15,7 @@ async function deleteNonExisting() {
 
 
 
+// test #load()
 describe('#load()', () => {
 
   // empty >> {}

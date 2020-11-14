@@ -1,6 +1,6 @@
 // jshint esversion: 8
 
-// Test createDatabaseValue
+// Test XmlFileAdapter
 describe('XmlFileAdapter', () => {
 
   require('./save');

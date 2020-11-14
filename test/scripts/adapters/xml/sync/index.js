@@ -1,6 +1,6 @@
 // jshint esversion: 8
 
-// Test createDatabaseValue
+// Test SyncXmlFileAdapter
 describe('SyncXmlFileAdapter', () => {
 
   require('./save');
