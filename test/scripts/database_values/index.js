@@ -3,5 +3,6 @@
 describe('database-values', () => {
 
   require('./database_object');
+  require('./database_array');
 
 });
