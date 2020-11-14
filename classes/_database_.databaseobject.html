@@ -137,16 +137,15 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_database_.databaseobject.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_database_.databaseobject.html#_data" class="tsd-kind-icon">_data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_database_.databaseobject.html#data" class="tsd-kind-icon">data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_database_.databaseobject.html#data" class="tsd-kind-icon">data</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_database_.databaseobject.html#length" class="tsd-kind-icon">length</a></li>
 							</ul>
 						</section>
@@ -172,13 +171,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Database<wbr>Object<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_database_.databaseobject.html" class="tsd-signature-type">DatabaseObject</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Database<wbr>Object<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_database_.html#databasevalueable" class="tsd-signature-type">DatabaseValueAble</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_database_.databaseobject.html" class="tsd-signature-type">DatabaseObject</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L670">database.ts:670</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L629">database.ts:629</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -200,7 +199,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_database_.html#databasevalueable" class="tsd-signature-type">DatabaseValueAble</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = {}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>the data for the database-array</p>
@@ -213,20 +212,20 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="_data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _data</h3>
-					<div class="tsd-signature tsd-kind-icon">_data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_database_.html#databasevalueable" class="tsd-signature-type">DatabaseValueAble</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L637">database.ts:637</a></li>
+							<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L616">database.ts:616</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The real object-contents of the DatabaseObject</p>
+							<p>The data of the DatabaseObject</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>author</dt>
@@ -235,79 +234,12 @@
 							<dt>see</dt>
 							<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a> - 👩‍👦 the parent class</p>
 							</dd>
-							<dt>see</dt>
-							<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a>.data - the getter and setter for the data</p>
-							</dd>
 						</dl>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="data" class="tsd-anchor"></a>
-					<h3>data</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> data<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L653">database.ts:653</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The data of the DatabaseObject</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>author</dt>
-									<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a> - 👩‍👦 the parent class</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a>._data - the storage for the data</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L648">database.ts:648</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The data of the DatabaseObject</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>author</dt>
-									<dd><p>Nicolas Schmidt &lt;<a href="https://github.com/nsc-de">@nsc-de</a>&gt;</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a> - 👩‍👦 the parent class</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html">DatabaseObject</a>._data - the storage for the data</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>data: <a href="../interfaces/_database_.jsobject.html" class="tsd-signature-type">JSObject</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="length" class="tsd-anchor"></a>
 					<h3>length</h3>
@@ -318,7 +250,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L668">database.ts:668</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L627">database.ts:627</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -354,7 +286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L811">database.ts:811</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L770">database.ts:770</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -394,7 +326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L834">database.ts:834</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L793">database.ts:793</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -434,7 +366,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L757">database.ts:757</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L716">database.ts:716</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -474,7 +406,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L781">database.ts:781</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L740">database.ts:740</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -514,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L697">database.ts:697</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L656">database.ts:656</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -560,7 +492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L724">database.ts:724</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L683">database.ts:683</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -606,7 +538,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L739">database.ts:739</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L698">database.ts:698</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -646,7 +578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/c6b161e/src/database.ts#L796">database.ts:796</a></li>
+									<li>Defined in <a href="https://github.com/nsc-de/js-database/blob/ac36542/src/database.ts#L755">database.ts:755</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -738,10 +670,7 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_database_.databaseobject.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="_database_.databaseobject.html#_data" class="tsd-kind-icon">_data</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_database_.databaseobject.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -781,7 +710,7 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_database_.databaseadapter.html" class="tsd-kind-icon">Database<wbr>Adapter</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/_database_.jsobject.html" class="tsd-kind-icon">JSObject</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
@@ -817,8 +746,8 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
@@ -826,9 +755,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
 			</ul>
 		</div>
 	</div>

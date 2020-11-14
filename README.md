@@ -1,47 +1,13 @@
+[![Build status][build-shield]][build-url]
+[![NPM][version-shield]][npm-url]
+[![Downloads][downloads-shield]][npm-url]
+[![Known Vulnerabilities][vulnerabilities-shield]][vulnerabilities-url]
 
-<p align="center">
-  <a href="https://nsc-de.github.io/js-database/">
-    <img src="assets/images/docs.png" alt="Logo" width="100%">
-  </a>
-
-  <h3 align="center">JS Database (aka NSCDB)</h3>
-
-  <p align="center">
-    A simple lightweight package to manage data
-    <br />
-    <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Read the Wiki »</strong></a>
-    <br />
-    <a href="https://nsc-de.github.io/js-database/"><strong>Explore the typedoc »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart">Quickstart</a>
-    ·
-    <a href="https://github.com/nsc-de/js-database/issues/new?assignees=&labels=&template=bug_report.md&title=">Report Bug</a>
-    ·
-    <a href="https://github.com/nsc-de/js-database/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
-  </p>
-
-</p>
-
-<p>
-  This branch contains the contents of the <a href="https://nsc-de.github.io/js-database/">typedoc-site</a> of <a href="https://www.npmjs.com/package/nscdb">nscdb</a>. It is completely is written in <a href="https://github.com/Microsoft/tsdoc">tsdoc</a> and generated using <a href="http://typedoc.org/">typedoc</a>. For guides and Tutorials please take a look at the <a href="https://github.com/nsc-de/js-database/wiki">wiki</a>.
-
-  🔽 You can find the normal readme of <a href="https://www.npmjs.com/package/nscdb">nscdb</a> below
-</p>
-<br>
-<br>
-<br>
-
----
-
-<br>
 [![Contributors][contributors-shield]][contributors-url]
+[![BSD-2-Clause][license-shield]][license-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![NPM][version-shield]][npm-url]
-[![Downloads][downloads-shield]][npm-url]
 
 
 <br />
@@ -50,7 +16,7 @@
     <img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">JS Database (aka NSCDB)</h3>
+  <h3 align="center">JS Database (aka. NSCDB) v0.1.5</h3>
 
   <p align="center">
     A simple lightweight package to manage data
@@ -58,6 +24,8 @@
     <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Read the Wiki »</strong></a>
     <br />
     <a href="https://nsc-de.github.io/js-database/"><strong>Explore the typedoc »</strong></a>
+    <br />
+    <a href="https://github.com/nsc-de/js-database/blob/master/CHANGELOG.md"><strong>See Changelog »</strong></a>
     <br />
     <br />
     <a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart">Quickstart</a>
@@ -250,14 +218,17 @@ Distributed under the BSD2-Clause License. See `LICENSE` for more information.
 Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/js-database)
 
 ---
+<p align="center">
+<img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo.png" width="48" alt="Logo">
+</p>
 <p align="right">
-<a href="https://github.com/nsc-de/js-database">js-database</a>
-by
-<a href="https://github.com/nsc-de">Nicolas Schmidt</a>
-| License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a>
-| <a href="https://github.com/nsc-de/js-database/wiki">read the wiki</a>
-| <a href="https://nsc-de.github.io/js-database/">explore the typedoc</a>
-| <a href="https://github.com/nsc-de/js-database">GitHub</a>
+<a href="https://github.com/nsc-de/js-database">js-database</a> 
+by 
+<a href="https://github.com/nsc-de">Nicolas Schmidt</a> 
+| License <a href="https://github.com/nsc-de/js-database/blob/master/LICENSE">BSD-2-Clause</a> 
+| <a href="https://github.com/nsc-de/js-database/wiki">read the wiki</a> 
+| <a href="https://nsc-de.github.io/js-database/">explore the typedoc</a> 
+| <a href="https://github.com/nsc-de/js-database">GitHub</a> 
 | <a href="https://www.npmjs.com/package/nscdb">NPM</a>
 </p>
 
@@ -265,6 +236,7 @@ by
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[build-shield]: https://ci.appveyor.com/api/projects/status/rkx0p7mj9gfi8988/branch/master?svg=true
 [contributors-shield]: https://img.shields.io/github/contributors/nsc-de/js-database.svg
 [forks-shield]: https://img.shields.io/github/forks/nsc-de/js-database.svg
 [stars-shield]: https://img.shields.io/github/stars/nsc-de/js-database.svg
@@ -272,10 +244,13 @@ by
 [license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
 [version-shield]: https://img.shields.io/npm/v/nscdb.svg
 [downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
+[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.5/badge.svg
 
+[build-url]: https://ci.appveyor.com/project/nsc-de/js-database/branch/master
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
 [forks-url]: https://github.com/nsc-de/js-database/network/members
 [stars-url]: https://github.com/nsc-de/js-database/stargazers
 [issues-url]: https://github.com/nsc-de/js-database/issues
 [license-url]: https://github.com/nsc-de/js-database/blob/master/LICENSE
 [npm-url]: https://www.npmjs.com/package/nscdb
+[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.5
