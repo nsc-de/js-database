@@ -216,6 +216,9 @@ Distributed under the BSD2-Clause License. See `LICENSE` for more information.
 Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/js-database)
 
 ---
+<p align="center">
+<img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo.png" width="48" alt="Logo">
+</p>
 <p align="right">
 <a href="https://github.com/nsc-de/js-database">js-database</a> 
 by 
