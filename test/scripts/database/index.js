@@ -3,5 +3,6 @@
 describe('database', () => {
 
   require('./async');
+  require('./sync');
 
 });
