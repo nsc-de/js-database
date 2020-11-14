@@ -1,7 +1,7 @@
 // jshint esversion: 6
 
 const { assert } = require('chai');
-const db = require('../../');
+const db = require('../../../database');
 
 // Test createDatabaseValue
 describe('createDatabaseValue()', () => {

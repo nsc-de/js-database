@@ -1,12 +1,13 @@
 [![Build status][build-shield]][build-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![NPM][version-shield]][npm-url]
 [![Downloads][downloads-shield]][npm-url]
 [![Known Vulnerabilities][vulnerabilities-shield]][vulnerabilities-url]
+
+[![Contributors][contributors-shield]][contributors-url]
+[![BSD-2-Clause][license-shield]][license-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 
 <br />
@@ -215,6 +216,9 @@ Distributed under the BSD2-Clause License. See `LICENSE` for more information.
 Project Link: [https://github.com/nsc-de/js-database](https://github.com/nsc-de/js-database)
 
 ---
+<p align="center">
+<img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo.png" width="48" alt="Logo">
+</p>
 <p align="right">
 <a href="https://github.com/nsc-de/js-database">js-database</a> 
 by 
@@ -238,7 +242,7 @@ by
 [license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
 [version-shield]: https://img.shields.io/npm/v/nscdb.svg
 [downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
-[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.4/badge.svg
+[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.5/badge.svg
 
 [build-url]: https://ci.appveyor.com/project/nsc-de/js-database/branch/master
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
@@ -247,4 +251,4 @@ by
 [issues-url]: https://github.com/nsc-de/js-database/issues
 [license-url]: https://github.com/nsc-de/js-database/blob/master/LICENSE
 [npm-url]: https://www.npmjs.com/package/nscdb
-[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.4
+[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.5
