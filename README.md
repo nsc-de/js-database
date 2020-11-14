@@ -16,7 +16,7 @@
     <img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">JS Database (aka NSCDB)</h3>
+  <h3 align="center">JS Database (aka. NSCDB) v0.1.5</h3>
 
   <p align="center">
     A simple lightweight package to manage data
@@ -24,6 +24,8 @@
     <a href="https://github.com/nsc-de/js-database/wiki/"><strong>Read the Wiki »</strong></a>
     <br />
     <a href="https://nsc-de.github.io/js-database/"><strong>Explore the typedoc »</strong></a>
+    <br />
+    <a href="https://github.com/nsc-de/js-database/blob/master/CHANGELOG.md"><strong>See Changelog »</strong></a>
     <br />
     <br />
     <a href="https://github.com/nsc-de/js-database/wiki/Node-Quickstart">Quickstart</a>
