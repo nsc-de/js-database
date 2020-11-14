@@ -10,7 +10,7 @@
     "build:production": "tsc --project tsconfig.production.json",
     "build:doc": "node_modules/.bin/typedoc --options tsdoc.json",
     "test": "npm run test:compile&npm run test:execute",
-    "test:execute": "mocha --require source-map-support/register test/scripts/**/*.js",
+    "test:execute": "mocha --require source-map-support/register test/scripts/index.js",
     "test:compile": "npm run types&npm run test:compile:only",
     "test:compile:only": "tsc --project tsconfig.testing.json",
     "workspace:setup": "npm i&cd example&npm i&cd../test&npm i&cd ..",

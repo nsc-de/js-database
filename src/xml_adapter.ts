@@ -1,7 +1,5 @@
-// TODO Rearange XML to match the normal style
 import * as fs from 'fs';
 import * as path from 'path';
-import { parse } from 'path';
 
 import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
@@ -302,6 +300,7 @@ function generateXML(data: any, settings: XMLAdapterSettings): string {
     indentAttributes: settings.indentAttributes,
     compact: true,
   };
+
   args.space = settings.beautify ? settings.beautify_space : 0;
   return xml.js2xml(data, args);
 }
