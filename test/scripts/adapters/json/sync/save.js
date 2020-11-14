@@ -40,7 +40,7 @@ describe('#save()', () => {
     await adapter.save(test_data);
 
     assert.isTrue(await fs.exists(non_existing));
-    assert.equal("{\n  \"testData\": \"test\"\n}", await fs.readFile(non_existing));
+    assert.equal(await fs.readFile(non_existing), '{\n  "testData": "test"\n}');
 
     await deleteNonExisting();
     
@@ -55,7 +55,7 @@ describe('#save()', () => {
     await adapter.save(test_data);
 
     assert.isTrue(await fs.existsSync(non_existing));
-    assert.equal("{\n    \"testData\": \"test\"\n}", await fs.readFile(non_existing));
+    assert.equal(await fs.readFile(non_existing), '{\n    "testData": "test"\n}');
 
     await deleteNonExisting();
     
