@@ -1,12 +1,13 @@
 [![Build status][build-shield]][build-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![NPM][version-shield]][npm-url]
 [![Downloads][downloads-shield]][npm-url]
 [![Known Vulnerabilities][vulnerabilities-shield]][vulnerabilities-url]
+
+[![Contributors][contributors-shield]][contributors-url]
+[![BSD-2-Clause][license-shield]][license-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 
 <br />
