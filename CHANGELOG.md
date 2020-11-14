@@ -6,8 +6,9 @@ Actual Version: [`0.1.5`](#0.1.5)
 
 
 ### 0.1.5
-...
 
+_install using `npm i nscdb@0.1.5`_
+* Improved performance by creating DatabaseObjects and DatabaseArrays dynamically
 
 ### 0.1.4
 
