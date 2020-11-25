@@ -380,7 +380,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
   else if(Array.isArray(val)) return val.map(v => getNormalValue(v));
   else if(typeof val === "object" && val !== null) {
     const data: any = {};
-    Object.keys(data).forEach((k) => data[k] = getNormalValue(val[k]));
+    Object.keys(val).forEach((k) => data[k] = getNormalValue(val[k]));
     return data;
   }
   else return val;
@@ -760,7 +760,7 @@ export class DatabaseObject {
     if(typeof key == "string") return this.getNormal(key.split(/[.\[\]]/g));
     else {
       if(key.length > 1) {
-        let e = this._data[key[0]];
+        let e: DatabaseValue = createDatabaseValue(this._data[key[0]]);
         if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
         return e?.getNormal(key.slice(1, key.length));
       } else {
@@ -877,8 +877,7 @@ export class Database extends DatabaseObject {
    *
    * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
    */
-  public async saveData (): Promise<this> { 
-    console.log(this.data);
+  public async saveData (): Promise<this> {
     await this.adapter.save(this.data); return this; 
   }
 
