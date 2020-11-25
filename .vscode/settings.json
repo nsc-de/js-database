@@ -1,7 +1,11 @@
 {
   // The following will hide the js and map files in the editor
   "files.exclude": {
-      "*.js": true,
+      "database.js": true,
+      "fs_help.js": true,
+      "json_adapter.js": true,
+      "yaml_adapter.js": true,
+      "xml_adapter.js": true,
       "**/*.map": true,
       "*.d.ts": true,
       "node_modules": true,
