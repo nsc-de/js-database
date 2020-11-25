@@ -28,12 +28,11 @@
   🔽 You can find the normal readme of <a href="https://www.npmjs.com/package/nscdb">nscdb</a> below
 </p>
 <br>
-<br>
-<br>
 
 ---
 
 <br>
+
 [![Build status][build-shield]][build-url]
 [![NPM][version-shield]][npm-url]
 [![Downloads][downloads-shield]][npm-url]
