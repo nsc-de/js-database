@@ -98,7 +98,7 @@ export function createDatabaseValue(val : any[]) : DatabaseArray;
 export function createDatabaseValue(val : JSObject) : DatabaseObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) as argument.
  *
@@ -113,7 +113,7 @@ export function createDatabaseValue(val : JSObject) : DatabaseObject;
 export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) as argument.
  *
@@ -128,7 +128,7 @@ export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
 export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a string as argument.
  *
@@ -142,7 +142,7 @@ export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
 export function createDatabaseValue(val : string) : string;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a number as argument.
  *
@@ -156,7 +156,7 @@ export function createDatabaseValue(val : string) : string;
 export function createDatabaseValue(val : number) : number;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a boolean as argument.
  *
@@ -170,7 +170,7 @@ export function createDatabaseValue(val : number) : number;
 export function createDatabaseValue(val : boolean) : boolean;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * null as argument.
  *
@@ -184,7 +184,7 @@ export function createDatabaseValue(val : boolean) : boolean;
 export function createDatabaseValue(val : null) : null;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * undefined as argument.
  *
