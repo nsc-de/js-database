@@ -39,11 +39,10 @@ fs.writeFileSync(`${__dirname}/docs/README.md`,
   🔽 You can find the normal readme of <a href="https://www.npmjs.com/package/nscdb">nscdb</a> below
 </p>
 <br>
-<br>
-<br>
 
 ---
 
 <br>
+
 ` + readme);
 console.log(`Created documentation readme "${path.resolve(`${__dirname}/docs/README.md`)}"`);
