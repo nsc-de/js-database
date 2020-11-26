@@ -12,6 +12,11 @@ _install using `npm i nscdb@0.2.0`_
 
 ## 0.1.x
 
+### 0.1.7
+
+_install using `npm i nscdb@0.1.7`_
+* Removed unnecessary debug log
+
 ### 0.1.6
 
 _install using `npm i nscdb@0.1.6`_

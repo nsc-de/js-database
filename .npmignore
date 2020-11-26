@@ -9,6 +9,7 @@ tsconfig.types.json
 typedoc.json
 database.json
 build.docs.js
+*.tgz
 
 # github
 appveyor.yml

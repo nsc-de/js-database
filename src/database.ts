@@ -473,7 +473,6 @@ export class DatabaseArray {
     else if(typeof key == "number") this._data[key] = getNormalValue(value);
     else {
       if(key.length > 1) {
-        console.log("a");
         if(this._data[<number>key[0]] == null) this._data[<number>key[0]] = createObjectForKey(key);
         const e = createDatabaseValue(this._data[<number>key[0]]);
         if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) 
@@ -481,10 +480,8 @@ export class DatabaseArray {
         (<DatabaseObject | DatabaseArray><unknown>e).set(key.slice(1, key.length), value)
       }
       else {
-        console.log("before", this._data);
         if(typeof key[0] === 'string') this.set(parseInt(key[0]), value);
         else this.set(key[0], value);
-        console.log("after: ",this._data);
       }
     }
     return this;
