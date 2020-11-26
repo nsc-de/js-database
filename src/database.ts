@@ -98,7 +98,7 @@ export function createDatabaseValue(val : any[]) : DatabaseArray;
 export function createDatabaseValue(val : JSObject) : DatabaseObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) as argument.
  *
@@ -113,7 +113,7 @@ export function createDatabaseValue(val : JSObject) : DatabaseObject;
 export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) as argument.
  *
@@ -128,7 +128,7 @@ export function createDatabaseValue(val : DatabaseObject) : DatabaseObject;
 export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a string as argument.
  *
@@ -142,7 +142,7 @@ export function createDatabaseValue(val : DatabaseArray) : DatabaseArray;
 export function createDatabaseValue(val : string) : string;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a number as argument.
  *
@@ -156,7 +156,7 @@ export function createDatabaseValue(val : string) : string;
 export function createDatabaseValue(val : number) : number;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * a boolean as argument.
  *
@@ -170,7 +170,7 @@ export function createDatabaseValue(val : number) : number;
 export function createDatabaseValue(val : boolean) : boolean;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * null as argument.
  *
@@ -184,7 +184,7 @@ export function createDatabaseValue(val : boolean) : boolean;
 export function createDatabaseValue(val : null) : null;
 
 /**
- * This function is not realy usefull. It gives just the input back.
+ * This function is not really useful. It gives just the input back.
  * It is just implemented that you don't get an error when you give
  * undefined as argument.
  *
@@ -374,8 +374,19 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble;
  * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
 export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
-  if(val instanceof DatabaseObject || val instanceof  DatabaseArray) return val.data;
-  else return val;
+
+  if(val == {}) return {};
+  else if(val instanceof DatabaseObject || val instanceof  DatabaseArray) return getNormalValue(val.data);
+  else if(Array.isArray(val)) {
+    for(let i = 0; i < val.length; i++) {
+      val[i] = getNormalValue(val[i]);
+    }
+  }
+  else if(typeof val === "object" && val !== null) {
+    Object.keys(val).forEach((k) => val[k] = getNormalValue(val[k]));
+  }
+  return val;
+
 }
 
 
@@ -400,6 +411,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
  */
 export class DatabaseArray implements DatabaseArrayType {
 
+  public _data!: DatabaseValueAble[];
 
   /**
    * The data of the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html)
@@ -409,7 +421,13 @@ export class DatabaseArray implements DatabaseArrayType {
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#_data) - the storage for the data
    */
-  public data: DatabaseValueAble[];
+  public set data(data: DatabaseValueAble[]) {
+    this._data = getNormalValue(data); // << Make sure there is no DatabaseObject or DatabaseArray in the data
+  }
+
+  public get data(): DatabaseValueAble[] {
+    return this._data;
+  }
 
 
   /**
@@ -421,7 +439,7 @@ export class DatabaseArray implements DatabaseArrayType {
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).[data](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html#data) - the data of the array
    */
   public get length(): number {
-    return this.data.length;
+    return this._data.length;
   }
 
 
@@ -452,17 +470,18 @@ export class DatabaseArray implements DatabaseArrayType {
   public set(key: number | string | Array<string | number>, value : DatabaseInsertable): this {
 
     if(typeof key == "string") this.set(key.split(/[.\[\]]/g), value);
-    else if(typeof key == "number") this.data[key] = getNormalValue(value);
+    else if(typeof key == "number") this._data[key] = getNormalValue(value);
     else {
       if(key.length > 1) {
-        if(this.data[<number>key[0]] == null) this.data[<number>key[0]] = createObjectForKey(key);
-        const e = createDatabaseValue(this.data[<number>key[0]]);
+        if(this._data[<number>key[0]] == null) this._data[<number>key[0]] = createObjectForKey(key);
+        const e = createDatabaseValue(this._data[<number>key[0]]);
         if(!(e instanceof DatabaseObject || e instanceof DatabaseArray))
           throw new Error(`Can't use set property of ${typeof e}`);
         (<DatabaseObject | DatabaseArray><unknown>e).set(key.slice(1, key.length), value)
       }
       else {
-        this.data[typeof key[0] == "string" ? parseInt(key[0]) : key[0]] = getNormalValue(value);
+        if(typeof key[0] === 'string') this.set(parseInt(key[0]), value);
+        else this.set(key[0], value);
       }
     }
     return this;
@@ -496,17 +515,8 @@ export class DatabaseArray implements DatabaseArrayType {
    */
   public get(key: number | string | Array<string | number>): DatabaseValue {
 
-    if(typeof key == "string") return this.get(key.split(/[.\[\]]/g));
-    else if(typeof key == "number") return createDatabaseValue(this.data[key]);
-    else {
-      if(key.length > 1) {
-        let e = <DatabaseObject | DatabaseArray><unknown> createDatabaseValue(this.data[<number>key[0]]);
-        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
-        return e?.get(key.slice(1, key.length));
-      } else {
-        return createDatabaseValue(this.data[typeof key[0] == "string" ? parseInt(key[0]) : key[0]]);
-      }
-    }
+    return createDatabaseValue(this.getNormal(key));
+
   }
 
 
@@ -520,7 +530,19 @@ export class DatabaseArray implements DatabaseArrayType {
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
    */
   public getNormal(key: number | string | Array<string | number>): DatabaseValueAble {
-    return getNormalValue(this.get(key));
+
+    if(typeof key == "string") return this.getNormal(key.split(/[.\[\]]/g));
+    else if(typeof key == "number") return this._data[key];
+    else {
+      if(key.length > 1) {
+        let e = <DatabaseObject | DatabaseArray><unknown> createDatabaseValue(this._data[<number>key[0]]);
+        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
+        return e?.getNormal(key.slice(1, key.length));
+      } else {
+        return this._data[typeof key[0] == "string" ? parseInt(key[0]) : key[0]];
+      }
+    }
+
   }
 
 
@@ -529,7 +551,7 @@ export class DatabaseArray implements DatabaseArrayType {
    *
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to update
-   * @param update the funciton to update the value
+   * @param update the function to update the value
    * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) itself, so you can chain operations like that
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html) - 👩‍👦 the parent class
@@ -576,7 +598,7 @@ export class DatabaseArray implements DatabaseArrayType {
    */
   public push(...values: DatabaseInsertable[]): this {
 
-    this.data.push(...values.map(v => getNormalValue(v)));
+    this._data.push(...values.map(v => getNormalValue(v)));
     return this;
 
   }
@@ -605,6 +627,7 @@ export class DatabaseArray implements DatabaseArrayType {
  */
 export class DatabaseObject implements DatabaseObjectType {
 
+  private _data!: JSObject<DatabaseValueAble>;
 
   /**
    * The data of the DatabaseObject
@@ -613,7 +636,13 @@ export class DatabaseObject implements DatabaseObjectType {
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
-  public data: JSObject<DatabaseValueAble>;
+  public set data(data: JSObject<DatabaseValueAble>) {
+    this._data = getNormalValue(data); // << Make sure there is no DatabaseObject or DatabaseArray in the data
+  }
+
+  public get data(): JSObject<DatabaseValueAble> {
+    return this._data;
+  }
 
 
   /**
@@ -625,7 +654,7 @@ export class DatabaseObject implements DatabaseObjectType {
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearray.html).data - the data of the array
    */
   public get length(): number {
-    return Object.keys(this.data).length;
+    return Object.keys(this._data).length;
   }
 
 
@@ -640,7 +669,7 @@ export class DatabaseObject implements DatabaseObjectType {
    */
   constructor(
     data: JSObject<DatabaseValueAble> = {},
-  ) { this.data = data; }
+  ) { this._data = data; }
 
 
   /**
@@ -657,13 +686,13 @@ export class DatabaseObject implements DatabaseObjectType {
     if(typeof key == "string") return this.set(key.split(/[.\[\]]/g), value);
     else {
       if(key.length > 1) {
-        if(this.data[key[0]] == null) this.data[key[0]] = createObjectForKey(key);
-        const e = createDatabaseValue(this.data[key[0]]);
+        if(this._data[key[0]] == null) this._data[key[0]] = createObjectForKey(key);
+        const e = createDatabaseValue(this._data[key[0]]);
         if(!(e instanceof DatabaseObject || e instanceof DatabaseArray))
           throw new Error(`Can't use set property of ${typeof e}`);
         (<DatabaseObject | DatabaseArray><unknown>e).set(key.slice(1, key.length), value)
       } else {
-        this.data[key[0]] = getNormalValue(value);
+        this._data[key[0]] = getNormalValue(value);
       }
     }
     return this;
@@ -695,10 +724,10 @@ export class DatabaseObject implements DatabaseObjectType {
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
-  public setDefaults (defaults : JSObject): this {
+  public setDefaults (defaults : JSObject<DatabaseInsertable>): this {
     Object.keys(defaults).forEach(k => {
-      if(this.data[k] === null || this.data[k] === undefined) this.data[k] = createDatabaseValue(defaults[k]);
-      else if(defaults[k] instanceof Object && this.data[k] instanceof Object) new DatabaseObject(this.data[k] as JSObject<DatabaseValueAble>).setDefaults(defaults[k]);
+      if(this._data[k] === null || this._data[k] === undefined) this._data[k] = getNormalValue(defaults[k]);
+      else if(defaults[k] instanceof Object && this._data[k] instanceof Object) createDatabaseValue(this._data[k] as JSObject<DatabaseValueAble>).setDefaults(<JSObject> defaults[k]);
     });
     return this;
   }
@@ -715,16 +744,8 @@ export class DatabaseObject implements DatabaseObjectType {
    */
   public get(key: string | Array<string | number>): DatabaseValue {
 
-    if(typeof key == "string") return this.get(key.split(/[.\[\]]/g));
-    else {
-      if(key.length > 1) {
-        let e = createDatabaseValue(this.data[key[0]]);
-        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
-        return e?.get(key.slice(1, key.length));
-      } else {
-        return createDatabaseValue(this.data[<string>key[0]]);
-      }
-    }
+    return createDatabaseValue(this.getNormal(key));
+
   }
 
 
@@ -738,7 +759,18 @@ export class DatabaseObject implements DatabaseObjectType {
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html) - 👩‍👦 the parent class
    */
   public getNormal(key: string | Array<string | number>): DatabaseValueAble {
-    return getNormalValue(this.get(key));
+
+    if(typeof key == "string") return this.getNormal(key.split(/[.\[\]]/g));
+    else {
+      if(key.length > 1) {
+        let e: DatabaseValue = createDatabaseValue(this._data[key[0]]);
+        if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return undefined;
+        return e?.getNormal(key.slice(1, key.length));
+      } else {
+        return this._data[<string>key[0]];
+      }
+    }
+
   }
 
 
@@ -771,11 +803,11 @@ export class DatabaseObject implements DatabaseObjectType {
     if(typeof key == "string") return this.contains(key.split(/[.\[\]]/g));
     else {
       if(key.length > 1) {
-        let e = createDatabaseValue(this.data[key[0]]);
+        let e = createDatabaseValue(this._data[key[0]]);
         if(!(e instanceof DatabaseObject || e instanceof DatabaseArray)) return false;
         return e?.contains(key.slice(1, key.length));
       } else {
-        return this.data[<string>key[0]] != undefined;
+        return this._data[<string>key[0]] != undefined;
       }
     }
   }
@@ -847,7 +879,9 @@ export class Database extends DatabaseObject {
    *
    * @see [Database](https://nsc-de.github.io/js-database/classes/_database_.database.html) - 👩‍👦 the parent class
    */
-  public async saveData (): Promise<this> { await this.adapter.save(this.data); return this; }
+  public async saveData (): Promise<this> {
+    await this.adapter.save(this.data); return this;
+  }
 
   /**
    * 🔄 Reload the data from the database

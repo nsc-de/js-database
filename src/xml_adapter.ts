@@ -154,7 +154,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
  *   beautify - should the generated xml be beautified (default: true)
  *   beautify_space - the space to indent the xml with (default: 2)
  * 
- * This is the input version of the interface. It get's applied all default values when passed to a 
+ * This is the input version of the interface. It gets applied all default values when passed to a 
  * [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
  * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
  * 
@@ -192,7 +192,7 @@ export interface XMLAdapterSettingsInput {
   fullTagEmptyElement?: boolean;
 
   /**
-   * Should attributes be splitted over multiple lines and indented when nessesarry?
+   * Should attributes be split over multiple lines and indented when necessary?
    * 
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * 
@@ -211,7 +211,7 @@ export interface XMLAdapterSettingsInput {
  *   beautify - should the generated xml be beautified (default: true)
  *   beautify_space - the space to indent the xml with (default: 2)
  * 
- * This is the input version of the interface. It get's applied all default values when passed to a 
+ * This is the input version of the interface. It gets applied all default values when passed to a 
  * [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) or 
  * [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html)
  * 
@@ -249,7 +249,7 @@ export interface XMLAdapterSettings {
   fullTagEmptyElement: boolean;
 
   /**
-   * Should attributes be splitted over multiple lines and indented when nessesarry?
+   * Should attributes be split over multiple lines and indented when necessary?
    * 
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * 
