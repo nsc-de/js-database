@@ -1,8 +1,13 @@
 # NSCDB Changelog
 
-Actual Version: [`0.1.6`](#0.1.6)
+Actual Version: [`0.1.7`](#0.1.7)
 
 ## 0.1.x
+
+### 0.1.7
+
+_install using `npm i nscdb@0.1.7`_
+* Removed unnecessary debug log
 
 ### 0.1.6
 

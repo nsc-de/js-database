@@ -16,7 +16,7 @@
     <img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">JS Database (aka. NSCDB) v0.1.6</h3>
+  <h3 align="center">JS Database (aka. NSCDB) v0.1.7</h3>
 
   <p align="center">
     A simple lightweight package to manage data
@@ -244,7 +244,7 @@ by
 [license-shield]: https://img.shields.io/github/license/nsc-de/js-database.svg
 [version-shield]: https://img.shields.io/npm/v/nscdb.svg
 [downloads-shield]: https://img.shields.io/npm/dt/nscdb.svg
-[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.6/badge.svg
+[vulnerabilities-shield]: https://snyk.io/test/npm/nscdb/0.1.7/badge.svg
 
 [build-url]: https://ci.appveyor.com/project/nsc-de/js-database/branch/master
 [contributors-url]: https://github.com/nsc-de/js-database/graphs/contributors
@@ -253,4 +253,4 @@ by
 [issues-url]: https://github.com/nsc-de/js-database/issues
 [license-url]: https://github.com/nsc-de/js-database/blob/master/LICENSE
 [npm-url]: https://www.npmjs.com/package/nscdb
-[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.6
+[vulnerabilities-url]: https://snyk.io/test/npm/nscdb/0.1.7
