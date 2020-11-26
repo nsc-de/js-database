@@ -197,7 +197,7 @@ export class SyncJsonFileAdapter implements SyncDatabaseAdapter {
  *   beautify - should the generated json be beautified (default: false)
  *   beautify_space - the space to indent the json with (default: 2)
  * 
- * This is the input version of the interface. It get's applied all default values when passed to a 
+ * This is the input version of the interface. It gets applied all default values when passed to a 
  * [JsonFileAdapter](https://nsc-de.github.io/js-database/classes/_json_adapter_.jsonfileadapter.html) or 
  * [SyncJsonFileAdapter](https://nsc-de.github.io/js-database/classes/_json_adapter_.syncjsonfileadapter.html)
  * 

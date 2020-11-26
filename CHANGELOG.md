@@ -2,11 +2,20 @@
 
 Actual Version: [`0.2.0`](#0.2.0)
 
-## 0.2.0
+## 0.2.x
+
+### 0.2.0
+
+_install using `npm i nscdb@0.2.0`_
+...
 
 
 ## 0.1.x
 
+### 0.1.6
+
+_install using `npm i nscdb@0.1.6`_
+* Fixed: the Data-Attribute was exported two times in some cases
 
 ### 0.1.5
 

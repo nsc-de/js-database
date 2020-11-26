@@ -6,8 +6,9 @@ test
 tsconfig.production.json
 tsconfig.testing.json
 tsconfig.types.json
-tsdoc.json
+typedoc.json
 database.json
+build.docs.js
 
 # github
 appveyor.yml

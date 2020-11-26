@@ -16,7 +16,7 @@
     <img src="https://raw.githubusercontent.com/nsc-de/js-database/master/images/logo-line.png" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">JS Database (aka. NSCDB) v0.1.5</h3>
+  <h3 align="center">JS Database (aka. NSCDB) v0.2.0</h3>
 
   <p align="center">
     A simple lightweight package to manage data

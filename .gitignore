@@ -6,6 +6,7 @@ docs
 *.d.ts
 *.js
 *.map
+!build.docs.js
 
 # generated
 database.json
