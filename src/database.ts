@@ -383,7 +383,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
     }
   }
   else if(typeof val === "object" && val !== null) {
-    Object.keys(val).forEach((k) => val[k] = getNormalValue(val[k]));
+    Object.keys(val).forEach((k) => (val as any)[k] = getNormalValue((val as any)[k]));
   }
   return val as DatabaseValueAble;
 

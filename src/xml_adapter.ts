@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
+import { DatabaseAdapter, DatabaseValueAble, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
 
 
@@ -53,7 +53,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
    * 
    * @see [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) - 👩‍👦 the parent class
    */
-  save(data: JSObject): Promise<void> {
+  save(data: JSObject<DatabaseValueAble>): Promise<void> {
     return new Promise((rs, rj) => 
       mkdirs(path.dirname(this.path)).then(() => 
         fs.writeFile(this.path, generateXML(data, this.settings), err => {
@@ -71,7 +71,7 @@ export class XMLFileAdapter implements DatabaseAdapter {
    * 
    * @see [XMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.xmlfileadapter.html) - 👩‍👦 the parent class
    */
-  load(): Promise<JSObject> {
+  load(): Promise<JSObject<DatabaseValueAble>> {
     return new Promise((rs, rj) => {
       fs.exists(this.path, exists => {
         if(exists) {
@@ -124,7 +124,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    * 
    * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html) - 👩‍👦 the parent class
    */
-  save(data: JSObject): void {
+  save(data: JSObject<DatabaseValueAble>): void {
     mkdirsSync(path.dirname(this.path));
     fs.writeFileSync(this.path, generateXML(data, this.settings));
   }
@@ -138,7 +138,7 @@ export class SyncXMLFileAdapter implements SyncDatabaseAdapter {
    * 
    * @see [SyncXMLFileAdapter](https://nsc-de.github.io/js-database/classes/_xml_adapter_.syncxmlfileadapter.html) - 👩‍👦 the parent class
    */
-  load(): JSObject {
+  load(): JSObject<DatabaseValueAble> {
     if(fs.existsSync(this.path)) return parseXML(fs.readFileSync(this.path).toString());
     return {};
   } 
@@ -295,7 +295,7 @@ function parseXML(data: string): any {
 
 // Generates xml using given settings
 function generateXML(data: any, settings: XMLAdapterSettings): string {
-  const args: JSObject = {
+  const args: JSObject<any> = {
     fullTagEmptyElement: settings.fullTagEmptyElement,
     indentAttributes: settings.indentAttributes,
     compact: true,

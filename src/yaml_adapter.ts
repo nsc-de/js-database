@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { DatabaseAdapter, JSObject, SyncDatabaseAdapter } from './database';
+import { DatabaseAdapter, DatabaseValueAble, JSObject, SyncDatabaseAdapter } from './database';
 import { mkdirs, mkdirsSync } from './fs_help';
 
 
@@ -49,7 +49,7 @@ export class YamlFileAdapter implements DatabaseAdapter {
    * 
    * @see [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html) - 👩‍👦 the parent class
    */
-  save(data: JSObject): Promise<void> {
+  save(data: JSObject<DatabaseValueAble>): Promise<void> {
     return new Promise((rs, rj) => 
       mkdirs(path.dirname(this.path)).then(() => 
         fs.writeFile(this.path, yaml.dump(data), err => {
@@ -67,7 +67,7 @@ export class YamlFileAdapter implements DatabaseAdapter {
    * 
    * @see [YamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.yamlfileadapter.html) - 👩‍👦 the parent class
    */
-  load(): Promise<JSObject> {
+  load(): Promise<JSObject<DatabaseValueAble>> {
     return new Promise((rs, rj) => {
       fs.exists(this.path, exists => {
         if(exists) {
@@ -116,7 +116,7 @@ export class SyncYamlFileAdapter implements SyncDatabaseAdapter {
    * 
    * @see [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) - 👩‍👦 the parent class
    */
-  save(data: JSObject): void {
+  save(data: JSObject<DatabaseValueAble>): void {
     mkdirsSync(path.dirname(this.path));
     fs.writeFileSync(this.path, yaml.dump(data));
   }
@@ -130,7 +130,7 @@ export class SyncYamlFileAdapter implements SyncDatabaseAdapter {
    * 
    * @see [SyncYamlFileAdapter](https://nsc-de.github.io/js-database/classes/_yaml_adapter_.syncyamlfileadapter.html) - 👩‍👦 the parent class
    */
-  load(): JSObject {
+  load(): JSObject<DatabaseValueAble> {
     if(fs.existsSync(this.path)) return yaml.load(fs.readFileSync(this.path).toString());
     return {};
   } 
