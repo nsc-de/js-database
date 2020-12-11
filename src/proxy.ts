@@ -27,7 +27,7 @@ export interface DatabaseObjectProxy extends DatabaseObjectType {
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.DatabaseObjectProxy.html) - 👩‍👦 the parent class
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.DatabaseObjectProxy.html)._data - the storage for the data
    */
-  data: JSObject;
+  data: JSObject<DatabaseInsertable>;
 
   /**
    * Returns the length of the object
@@ -72,7 +72,7 @@ export interface DatabaseObjectProxy extends DatabaseObjectType {
    *
    * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.DatabaseObjectProxy.html) - 👩‍👦 the parent class
    */
-  setDefaults(defaults: JSObject): this;
+  setDefaults(defaults: JSObject<DatabaseValueAble>): this;
 
   /**
    * Gets a value from the DatabaseObject.
@@ -130,7 +130,7 @@ export interface DatabaseObjectProxy extends DatabaseObjectType {
    */
   generateId(name: string): number;
 
-  [key: string]:  DatabaseProxyValue | Function | JSObject;
+  [key: string]:  DatabaseProxyValue | Function | JSObject<DatabaseInsertable>;
 }
 
 /**

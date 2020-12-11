@@ -18,7 +18,7 @@ export interface SyncDatabaseAdapter {
    * @see [SyncDatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html) - 👩‍👦 the parent interface
    * @see [SyncDatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.syncdatabaseadapter.html#load) - 💾 the load function
    */
-  save(data: JSObject): void;
+  save(data: JSObject<DatabaseValueAble>): void;
 
   /**
    * 💾 loads data
@@ -29,7 +29,7 @@ export interface SyncDatabaseAdapter {
    * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
    * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save function
    */
-  load(): JSObject;
+  load(): JSObject<DatabaseValueAble>;
 
 }
 
@@ -54,7 +54,7 @@ export interface DatabaseAdapter {
    * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
    * @see [DatabaseAdapter.load()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#load) - 💾 the load function
    */
-  save(data: JSObject): Promise<void>;
+  save(data: JSObject<DatabaseValueAble>): Promise<void>;
 
   /**
    * 💾 loads the data
@@ -65,7 +65,7 @@ export interface DatabaseAdapter {
    * @see [DatabaseAdapter](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html) - 👩‍👦 the parent interface
    * @see [DatabaseAdapter.save()](https://nsc-de.github.io/js-database/interfaces/_database_.databaseadapter.html#save) - 💾 the save function
    */
-  load(): Promise<JSObject>;
+  load(): Promise<JSObject<DatabaseValueAble>>;
 
 }
 
@@ -95,7 +95,7 @@ export function createDatabaseValue(val : any[]) : DatabaseArray;
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  * @see [createDatabaseValue()](https://nsc-de.github.io/js-database/modules/_database_.html#createdatabasevalue)
  */
-export function createDatabaseValue(val : JSObject) : DatabaseObject;
+export function createDatabaseValue(val : JSObject<DatabaseInsertable>) : DatabaseObject;
 
 /**
  * This function is not really useful. It gives just the input back.
@@ -220,7 +220,7 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue;
 export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
   if (val instanceof DatabaseObject || val instanceof DatabaseArray) return val;
   if (val instanceof Array) return new DatabaseArray(val);
-  if (val instanceof Object) return new DatabaseObject(val);
+  if (val instanceof Object) return new DatabaseObject(val as JSObject<DatabaseValueAble>);
   return val;
 }
 
@@ -238,7 +238,7 @@ export function createDatabaseValue(val : DatabaseInsertable) : DatabaseValue {
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
-export function getNormalValue(val : DatabaseArray): any[];
+export function getNormalValue(val : DatabaseArrayType): DatabaseValueAble[];
 
 /**
  * 🔨 Creates a normal object from a given [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
@@ -250,7 +250,7 @@ export function getNormalValue(val : DatabaseArray): any[];
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
-export function getNormalValue(val : DatabaseObject): JSObject;
+export function getNormalValue(val : DatabaseObjectType): JSObject<DatabaseValueAble>;
 
 /**
  * This function is not really useful. It gives just the input back.
@@ -280,7 +280,7 @@ export function getNormalValue(val : any[]): any[];
  * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobject.html)
  * @see [getNormalValue()](https://nsc-de.github.io/js-database/modules/_database_.html#getnormalvalue)
  */
-export function getNormalValue(val : JSObject): JSObject;
+export function getNormalValue(val : JSObject<DatabaseValueAble>): JSObject<DatabaseValueAble>;
 
 /**
  * This function is not really useful. It gives just the input back.
@@ -385,7 +385,7 @@ export function getNormalValue(val : DatabaseInsertable): DatabaseValueAble {
   else if(typeof val === "object" && val !== null) {
     Object.keys(val).forEach((k) => val[k] = getNormalValue(val[k]));
   }
-  return val;
+  return val as DatabaseValueAble;
 
 }
 
@@ -727,7 +727,7 @@ export class DatabaseObject implements DatabaseObjectType {
   public setDefaults (defaults : JSObject<DatabaseInsertable>): this {
     Object.keys(defaults).forEach(k => {
       if(this._data[k] === null || this._data[k] === undefined) this._data[k] = getNormalValue(defaults[k]);
-      else if(defaults[k] instanceof Object && this._data[k] instanceof Object) createDatabaseValue(this._data[k] as JSObject<DatabaseValueAble>).setDefaults(<JSObject> defaults[k]);
+      else if(defaults[k] instanceof Object && this._data[k] instanceof Object) createDatabaseValue(this._data[k] as JSObject<DatabaseValueAble>).setDefaults(defaults[k] as JSObject<DatabaseValueAble>);
     });
     return this;
   }
@@ -1035,8 +1035,8 @@ export type DatabaseValueAble = DatabaseValueAble[] | JSObject<DatabaseValueAble
  *
  * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
  */
-export type DatabaseInsertable = DatabaseValue | DatabaseValueAble;
-export interface JSObject {[key: string] : any};
+export type DatabaseInsertable = DatabaseValue | DatabaseValueAble | JSObject<DatabaseInsertable> | DatabaseInsertable[];
+export interface JSObject<T> {[key: string] : T};
 
 
 
@@ -1067,7 +1067,7 @@ export interface DatabaseObjectType {
      * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobjecttype.html) - 👩‍👦 the parent class
      * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobjecttype.html)._data - the storage for the data
      */
-    data: JSObject;
+    data: JSObject<DatabaseInsertable>;
 
     /**
      * Returns the length of the object
@@ -1112,7 +1112,7 @@ export interface DatabaseObjectType {
      *
      * @see [DatabaseObject](https://nsc-de.github.io/js-database/classes/_database_.databaseobjecttype.html) - 👩‍👦 the parent class
      */
-    setDefaults(defaults: JSObject): this;
+    setDefaults(defaults: JSObject<DatabaseValueAble>): this;
 
     /**
      * Gets a value from the DatabaseObject.
@@ -1262,7 +1262,7 @@ export interface DatabaseArrayType {
    *
    * @author Nicolas Schmidt <[@nsc-de](https://github.com/nsc-de)>
    * @param key the path to update
-   * @param update the funciton to update the value
+   * @param update the function to update the value
    * @returns the [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearraytype.html) itself, so you can chain operations like that
    *
    * @see [DatabaseArray](https://nsc-de.github.io/js-database/classes/_database_.databasearraytype.html) - 👩‍👦 the parent interface
